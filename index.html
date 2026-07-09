@@ -680,9 +680,9 @@
 
     /* ── SKILLS VIEW LAYOUT ── */
     .skills-view-layout {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
       max-width: 1200px;
       width: 100%;
       margin: 0 auto;
@@ -691,39 +691,65 @@
 
     .skills-group {
       padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: var(--white);
     }
 
     .skills-group-title {
       font-family: 'Syne', sans-serif;
       font-size: 20px;
       font-weight: 800;
-      margin-bottom: 24px;
+      margin-bottom: 8px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      border-bottom: 2px solid var(--black);
+      padding-bottom: 8px;
     }
 
-    .tags-container {
+    .skills-list {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 12px;
+      margin-top: 16px;
     }
 
-    .tag {
-      padding: 10px 20px;
-      font-size: 15px;
-      /* Increased for legibility */
+    .skill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border: 2px solid var(--black);
+      background-color: var(--white);
+      box-shadow: 2px 2px 0px var(--black);
+      transition: var(--transition);
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
     }
 
-    .tag.c:hover {
-      background-color: var(--yellow);
+    .skill-row:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0px var(--black);
     }
 
-    .tag.p:hover {
-      background-color: var(--pink-light);
+    .skills-group.c .skill-row:hover { background-color: var(--yellow-hover); }
+    .skills-group.p .skill-row:hover { background-color: var(--pink-light); }
+    .skills-group.b .skill-row:hover { background-color: var(--blue); }
+
+    .skill-name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .tag.b:hover {
-      background-color: var(--blue);
+    .skill-rating {
+      font-family: 'DM Mono', monospace;
+      font-weight: 800;
+      font-size: 13.5px;
+      color: var(--black);
+      letter-spacing: 1px;
     }
 
     /* ── PROJECTS VIEW LAYOUT ── */
@@ -966,6 +992,11 @@
         padding: 0 !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
+      }
+
+      .skills-view-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
       }
 
       .home-summary-grid {
@@ -1466,50 +1497,105 @@
         </div>
         <div class="skills-view-layout">
 
-          <div class="skills-group brutal-box interactive" id="skills-grp-1">
+          <!-- Databases & Code Card -->
+          <div class="skills-group brutal-box interactive c" id="skills-grp-1">
             <h3 class="skills-group-title">Databases &amp; Code</h3>
-            <p style="font-size: 14.5px; line-height: 1.5; color: var(--text-muted); margin-bottom: 20px; font-weight: 500;">
-              Core programming languages, query languages, and database administration strategies for backend data structures.
+            <p style="font-size: 13.5px; line-height: 1.5; color: var(--text-muted); margin-top: 8px; margin-bottom: 8px; font-weight: 500;">
+              Backend architectures, structured query setups, and administrative systems.
             </p>
-            <div class="tags-container">
-              <span class="tag c brutal-btn">Python</span>
-              <span class="tag c brutal-btn">SQL</span>
-              <span class="tag c brutal-btn">JavaScript</span>
-              <span class="tag c brutal-btn">Database Management</span>
-              <span class="tag c brutal-btn">DB Administration</span>
+            <div class="skills-list">
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+                <span class="skill-name">Python 🐍</span>
+                <span class="skill-rating">●●●●●</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-1')">
+                <span class="skill-name">SQL 📊</span>
+                <span class="skill-rating">●●●●●</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+                <span class="skill-name">Database Admin 📂</span>
+                <span class="skill-rating">●●●●○</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-4')">
+                <span class="skill-name">DB Management ⚙️</span>
+                <span class="skill-rating">●●●●○</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+                <span class="skill-name">JavaScript 🌐</span>
+                <span class="skill-rating">●●●○○</span>
+              </div>
             </div>
           </div>
 
-          <div class="skills-group brutal-box interactive" id="skills-grp-2">
+          <!-- Data Science & BI Card -->
+          <div class="skills-group brutal-box interactive p" id="skills-grp-2">
             <h3 class="skills-group-title">Data Science &amp; BI</h3>
-            <p style="font-size: 14.5px; line-height: 1.5; color: var(--text-muted); margin-bottom: 20px; font-weight: 500;">
-              Statistical processing, data manipulation libraries, data cleansing workflows, and business intelligence dashboards.
+            <p style="font-size: 13.5px; line-height: 1.5; color: var(--text-muted); margin-top: 8px; margin-bottom: 8px; font-weight: 500;">
+              Statistical insights, analytical paradigms, and clean business intelligence modeling.
             </p>
-            <div class="tags-container">
-              <span class="tag p brutal-btn">Machine Learning</span>
-              <span class="tag p brutal-btn">Pandas &amp; NumPy</span>
-              <span class="tag p brutal-btn">Data Cleaning</span>
-              <span class="tag p brutal-btn">EDA</span>
-              <span class="tag p brutal-btn">Power BI</span>
-              <span class="tag p brutal-btn">Tableau</span>
-              <span class="tag p brutal-btn">Matplotlib</span>
+            <div class="skills-list">
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+                <span class="skill-name">Machine Learning 🤖</span>
+                <span class="skill-rating">●●●●○</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-2')">
+                <span class="skill-name">Pandas &amp; NumPy 🐼</span>
+                <span class="skill-rating">●●●●●</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-3')">
+                <span class="skill-name">Data Cleaning 🧹</span>
+                <span class="skill-rating">●●●●●</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-2')">
+                <span class="skill-name">EDA 📈</span>
+                <span class="skill-rating">●●●●●</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-1')">
+                <span class="skill-name">Power BI 📊</span>
+                <span class="skill-rating">●●●●●</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-2')">
+                <span class="skill-name">Tableau 🎨</span>
+                <span class="skill-rating">●●●○○</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-3')">
+                <span class="skill-name">Matplotlib 📉</span>
+                <span class="skill-rating">●●●●○</span>
+              </div>
             </div>
           </div>
 
-          <div class="skills-group brutal-box interactive" id="skills-grp-3">
-            <h3 class="skills-group-title">Web &amp; Core Strengths</h3>
-            <p style="font-size: 14.5px; line-height: 1.5; color: var(--text-muted); margin-bottom: 20px; font-weight: 500;">
-              Frontend design fundamentals, problem solving models, analytical reasoning, and adaptive engineering practices.
+          <!-- Web & Core Strengths Card -->
+          <div class="skills-group brutal-box interactive b" id="skills-grp-3">
+            <h3 class="skills-group-title">Core Strengths</h3>
+            <p style="font-size: 13.5px; line-height: 1.5; color: var(--text-muted); margin-top: 8px; margin-bottom: 8px; font-weight: 500;">
+              Execution methodologies, frontend support, and reasoning frameworks.
             </p>
-            <div class="tags-container">
-              <span class="tag b brutal-btn">HTML</span>
-              <span class="tag b brutal-btn">CSS</span>
-              <span class="tag b brutal-btn">Problem Solving</span>
-              <span class="tag b brutal-btn">Analytical Thinking</span>
-              <span class="tag b brutal-btn">Attention to Detail</span>
-              <span class="tag b brutal-btn">Quick Adaptability</span>
+            <div class="skills-list">
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+                <span class="skill-name">Problem Solving 💡</span>
+                <span class="skill-rating">●●●●●</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+                <span class="skill-name">Analytical Thinking 🧠</span>
+                <span class="skill-rating">●●●●●</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-3')">
+                <span class="skill-name">Attention to Detail 🔍</span>
+                <span class="skill-rating">●●●●●</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('education', 'edu-card-2')">
+                <span class="skill-name">Quick Adaptability ⚡</span>
+                <span class="skill-rating">●●●●●</span>
+              </div>
+              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+                <span class="skill-name">HTML &amp; CSS 🕸️</span>
+                <span class="skill-rating">●●●●○</span>
+              </div>
             </div>
           </div>
+
+        </div>
 
         </div>
       </div>
@@ -1817,7 +1903,7 @@
     // Global click event dispatcher for dynamic sounds on all interactive elements
     document.addEventListener('click', (e) => {
       const target = e.target;
-      const clickableSelectors = 'a, button, .brutal-btn, .sidebar-link, .tag, .project-card, .edu-card, .search-item, .social-btn, .action-icon, .back-btn';
+      const clickableSelectors = 'a, button, .brutal-btn, .sidebar-link, .tag, .project-card, .edu-card, .search-item, .social-btn, .action-icon, .back-btn, .skill-row';
 
       if (target.closest(clickableSelectors)) {
         playClickSound();
