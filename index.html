@@ -729,24 +729,40 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 14px;
-      border: 2px solid var(--black);
-      background-color: var(--white);
-      box-shadow: 2px 2px 0px var(--black);
+      padding: 11px 14px;
+      border-bottom: 1.5px dashed rgba(0, 0, 0, 0.15);
       transition: var(--transition);
       cursor: pointer;
       font-weight: 700;
       font-size: 14px;
+      background: transparent;
+    }
+    .skill-row:last-child {
+      border-bottom: none;
     }
 
     .skill-row:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 4px 4px 0px var(--black);
+      transform: translateX(4px);
+      background-color: rgba(255, 255, 255, 0.65);
     }
 
-    .skills-group.c .skill-row:hover { background-color: var(--mint-light); }
-    .skills-group.p .skill-row:hover { background-color: var(--yellow); }
-    .skills-group.b .skill-row:hover { background-color: var(--pink-light); }
+    .skill-dots-wrap {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .skill-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.15);
+      border: 1.5px solid var(--black);
+      display: inline-block;
+    }
+    .skill-dot.active {
+      background-color: var(--black);
+    }
 
     .skill-name {
       display: flex;
@@ -1706,25 +1722,55 @@
               Backend architectures, structured query setups, and administrative systems.
             </p>
             <div class="skills-list">
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'commits-card-projects')">
                 <span class="skill-name">Python 🐍</span>
-                <span class="skill-rating">●●●●●</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-1')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'proj-card-1')">
                 <span class="skill-name">SQL 📊</span>
-                <span class="skill-rating">●●●●●</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'commits-card-projects')">
                 <span class="skill-name">Database Admin 📂</span>
-                <span class="skill-rating">●●●●○</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-4')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'proj-card-4')">
                 <span class="skill-name">DB Management ⚙️</span>
-                <span class="skill-rating">●●●●○</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'commits-card-projects')">
                 <span class="skill-name">JavaScript 🌐</span>
-                <span class="skill-rating">●●●○○</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot"></span>
+                  <span class="skill-dot"></span>
+                </div>
               </div>
             </div>
           </div>
@@ -1736,33 +1782,75 @@
               Statistical insights, analytical paradigms, and clean business intelligence modeling.
             </p>
             <div class="skills-list">
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'commits-card-projects')">
                 <span class="skill-name">Machine Learning 🤖</span>
-                <span class="skill-rating">●●●●○</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-2')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'proj-card-2')">
                 <span class="skill-name">Pandas &amp; NumPy 🐼</span>
-                <span class="skill-rating">●●●●●</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-3')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'proj-card-3')">
                 <span class="skill-name">Data Cleaning 🧹</span>
-                <span class="skill-rating">●●●●●</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-2')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'proj-card-2')">
                 <span class="skill-name">EDA 📈</span>
-                <span class="skill-rating">●●●●●</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-1')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'proj-card-1')">
                 <span class="skill-name">Power BI 📊</span>
-                <span class="skill-rating">●●●●●</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-2')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'proj-card-2')">
                 <span class="skill-name">Tableau 🎨</span>
-                <span class="skill-rating">●●●○○</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot"></span>
+                  <span class="skill-dot"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-3')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'proj-card-3')">
                 <span class="skill-name">Matplotlib 📉</span>
-                <span class="skill-rating">●●●●○</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot"></span>
+                </div>
               </div>
             </div>
           </div>
@@ -1774,25 +1862,55 @@
               Execution methodologies, frontend support, and reasoning frameworks.
             </p>
             <div class="skills-list">
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'commits-card-projects')">
                 <span class="skill-name">Problem Solving 💡</span>
-                <span class="skill-rating">●●●●●</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'commits-card-projects')">
                 <span class="skill-name">Analytical Thinking 🧠</span>
-                <span class="skill-rating">●●●●●</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'proj-card-3')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'proj-card-3')">
                 <span class="skill-name">Attention to Detail 🔍</span>
-                <span class="skill-rating">●●●●●</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('education', 'edu-card-2')">
+              <div class="skill-row" onclick="navigateToItem('education', 'edu-card-2')">
                 <span class="skill-name">Quick Adaptability ⚡</span>
-                <span class="skill-rating">●●●●●</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                </div>
               </div>
-              <div class="skill-row brutal-box" onclick="navigateToItem('projects', 'commits-card-projects')">
+              <div class="skill-row" onclick="navigateToItem('projects', 'commits-card-projects')">
                 <span class="skill-name">HTML &amp; CSS 🕸️</span>
-                <span class="skill-rating">●●●●○</span>
+                <div class="skill-dots-wrap">
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot active"></span>
+                  <span class="skill-dot"></span>
+                </div>
               </div>
             </div>
           </div>
