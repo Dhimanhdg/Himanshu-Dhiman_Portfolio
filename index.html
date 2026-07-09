@@ -143,6 +143,10 @@ body {
   color: var(--black);
   text-decoration: none;
   margin-bottom: 48px;
+  transition: var(--transition);
+}
+.sidebar-logo:hover {
+  transform: scale(1.02);
 }
 .sidebar-logo span {
   display: inline-flex;
@@ -243,6 +247,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
+  z-index: 10;
 }
 .search-input {
   width: 100%;
@@ -253,10 +258,65 @@ body {
   border: var(--border-width) solid var(--black);
   box-shadow: inset 2px 2px 0px rgba(0,0,0,0.05);
   outline: none;
+  position: relative;
+  z-index: 9;
 }
 .search-input:focus {
   background-color: var(--white);
   box-shadow: 2px 2px 0px var(--black);
+}
+
+/* ── SEARCH RESULTS DROPDOWN Overlay ── */
+.search-results-overlay {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  max-height: 380px;
+  overflow-y: auto;
+  background-color: var(--white);
+  border: var(--border-width) solid var(--black);
+  box-shadow: 6px 6px 0px var(--black);
+  z-index: 99;
+}
+.search-results-overlay.active {
+  display: block;
+}
+.search-group-header {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background-color: var(--cream);
+  padding: 8px 16px;
+  border-bottom: 1.5px solid var(--black);
+  letter-spacing: 0.5px;
+}
+.search-item {
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--black);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid var(--black);
+  transition: var(--transition);
+}
+.search-item:last-child {
+  border-bottom: none;
+}
+.search-item:hover {
+  background-color: var(--mint-light);
+}
+.search-item-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 .header-actions {
   display: flex;
@@ -324,6 +384,26 @@ body {
   color: var(--black);
   letter-spacing: -1px;
   line-height: 1.1;
+}
+
+/* ── FLASH HIGHLIGHT KEYFRAME ── */
+@keyframes flash-box {
+  0% {
+    background-color: var(--yellow);
+    border-color: var(--black);
+    transform: scale(1.02);
+  }
+  50% {
+    background-color: var(--pink-light);
+    transform: scale(1.02);
+  }
+  100% {
+    background-color: inherit;
+    transform: scale(1);
+  }
+}
+.highlight-flash {
+  animation: flash-box 1.2s ease-out;
 }
 
 /* ── HOME VIEW LAYOUT ── */
@@ -452,6 +532,11 @@ body {
   padding: 14px 8px;
   text-align: center;
   box-shadow: 2px 2px 0px var(--black);
+  transition: var(--transition);
+}
+.stat-chip:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--black);
 }
 .stat-chip-val {
   font-family: 'Syne', sans-serif;
@@ -819,12 +904,76 @@ body {
       <button class="back-btn" aria-label="Go Back" onclick="window.history.back()">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
       </button>
-      <div class="search-wrapper">
+      <div class="search-wrapper" id="search-wrapper-div">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" class="search-input" placeholder="Find skills, projects, certifications..." onkeyup="searchDashboard(this.value)">
+        <input type="text" id="db-search" class="search-input" placeholder="Find skills, projects, certifications..." onfocus="openSearchDropdown()" oninput="filterSearchDropdown(this.value)">
+        
+        <!-- Search Results Dropdown Overlay -->
+        <div id="search-results" class="search-results-overlay">
+          <!-- Projects -->
+          <div class="search-group-header">Projects &amp; Case Studies</div>
+          <div id="search-group-projects">
+            <div class="search-item" onclick="navigateToItem('projects', 'proj-card-1')">
+              <span>Financial Data Analytics</span>
+              <span class="search-item-meta">Project</span>
+            </div>
+            <div class="search-item" onclick="navigateToItem('projects', 'proj-card-2')">
+              <span>Spotify Data Analysis</span>
+              <span class="search-item-meta">Project</span>
+            </div>
+            <div class="search-item" onclick="navigateToItem('projects', 'proj-card-3')">
+              <span>Wildlife Tasmanian Devil Tracker</span>
+              <span class="search-item-meta">Project</span>
+            </div>
+            <div class="search-item" onclick="navigateToItem('projects', 'proj-card-4')">
+              <span>Swiggy Market Analytics</span>
+              <span class="search-item-meta">Project</span>
+            </div>
+          </div>
+          <!-- Skills -->
+          <div class="search-group-header">Technical Skills</div>
+          <div id="search-group-skills">
+            <div class="search-item" onclick="navigateToItem('skills', 'skills-grp-1')">
+              <span>Python, SQL, JavaScript, DB Admin</span>
+              <span class="search-item-meta">Skills</span>
+            </div>
+            <div class="search-item" onclick="navigateToItem('skills', 'skills-grp-2')">
+              <span>Machine Learning, Pandas, Power BI</span>
+              <span class="search-item-meta">Skills</span>
+            </div>
+            <div class="search-item" onclick="navigateToItem('skills', 'skills-grp-3')">
+              <span>HTML, CSS, Web UI, Problem Solving</span>
+              <span class="search-item-meta">Skills</span>
+            </div>
+          </div>
+          <!-- Credentials -->
+          <div class="search-group-header">Education &amp; Credentials</div>
+          <div id="search-group-education">
+            <div class="search-item" onclick="navigateToItem('education', 'edu-card-1')">
+              <span>B.E. Computer Science (AI &amp; ML)</span>
+              <span class="search-item-meta">Education</span>
+            </div>
+            <div class="search-item" onclick="navigateToItem('education', 'edu-card-2')">
+              <span>Diploma Computer Science Engineering</span>
+              <span class="search-item-meta">Education</span>
+            </div>
+            <div class="search-item" onclick="navigateToItem('education', 'edu-card-3')">
+              <span>IBM Professional Certification badge</span>
+              <span class="search-item-meta">Credential</span>
+            </div>
+          </div>
+        </div>
       </div>
+      
       <div class="header-actions">
-        <button class="action-icon" aria-label="Notifications" onclick="alert('Welcome! Navigation is now fully view-based. Try the sidebar tabs!')">
+        <!-- Sound Toggle Button -->
+        <button id="sound-toggle-btn" class="action-icon" aria-label="Toggle Sound" onclick="toggleSound()">
+          <!-- Speaker ON icon -->
+          <svg id="sound-on-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          <!-- Speaker OFF icon (hidden by default) -->
+          <svg id="sound-off-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        </button>
+        <button class="action-icon" aria-label="Notifications" onclick="alert('Mechanical pop clicks and a command palette search dropdown are active! Type something above.')">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
         </button>
         <div class="profile-avatar">
@@ -838,13 +987,13 @@ body {
       
       <!-- ── VIEW 1: HOME VIEW ── -->
       <div id="view-home" class="view-section active-view">
-        <div class="home-welcome-card brutal-box">
+        <div class="home-welcome-card brutal-box interactive">
           <h3>Hey, I'm Himanshu Dhiman!</h3>
-          <p>I am an <strong>AI &amp; ML Developer</strong> and Computer Science student. I specialize in cleaning messy data, doing Exploratory Data Analysis (EDA), and building scalable relational databases and Power BI dashboads. Use the navigation panel on the left to explore different views of my workspace.</p>
+          <p>I am an <strong>AI &amp; ML Developer</strong> and Computer Science student. I specialize in cleaning messy data, doing Exploratory Data Analysis (EDA), and building scalable relational databases and Power BI dashboards. Use the navigation panel on the left to explore different views of my workspace.</p>
         </div>
         <div class="home-summary-grid">
           <!-- Quick Overview -->
-          <div class="quick-overview-card brutal-box">
+          <div class="quick-overview-card brutal-box interactive">
             <h4>Quick Overview</h4>
             <div class="stats-chips" style="margin: 0 0 20px 0; grid-template-columns: 1fr 1fr;">
               <div class="stat-chip">
@@ -865,7 +1014,7 @@ body {
             </div>
           </div>
           <!-- Commits stats widget -->
-          <div class="commits-card brutal-box" style="grid-column: auto;">
+          <div class="commits-card brutal-box interactive" style="grid-column: auto;">
             <div class="commits-header">
               <span class="commits-title">Coding Activity</span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
@@ -888,7 +1037,7 @@ body {
         </div>
         <div class="about-view-layout">
           <!-- Profile Card -->
-          <div class="profile-card brutal-box">
+          <div class="profile-card brutal-box interactive">
             <div class="profile-header">
               <div class="profile-pic">
                 <img src="Himanshu Dhiman.jpeg" alt="Himanshu Dhiman">
@@ -942,7 +1091,7 @@ body {
           </div>
 
           <!-- Quick facts -->
-          <div class="brutal-box" style="padding: 32px; background-color: var(--white);">
+          <div class="brutal-box interactive" style="padding: 32px; background-color: var(--white);">
             <h4 style="font-family: 'Syne', sans-serif; font-size: 20px; margin-bottom: 20px;">Location &amp; Status</h4>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; font-weight: 500;">
               <li>📍 <strong>Location:</strong> Haryana, India</li>
@@ -961,7 +1110,7 @@ body {
         </div>
         <div class="skills-view-layout">
           
-          <div class="skills-group brutal-box">
+          <div class="skills-group brutal-box interactive" id="skills-grp-1">
             <h3 class="skills-group-title">Databases &amp; Code</h3>
             <div class="tags-container">
               <span class="tag c brutal-btn">Python</span>
@@ -972,7 +1121,7 @@ body {
             </div>
           </div>
 
-          <div class="skills-group brutal-box">
+          <div class="skills-group brutal-box interactive" id="skills-grp-2">
             <h3 class="skills-group-title">Data Science &amp; BI</h3>
             <div class="tags-container">
               <span class="tag p brutal-btn">Machine Learning</span>
@@ -985,7 +1134,7 @@ body {
             </div>
           </div>
 
-          <div class="skills-group brutal-box">
+          <div class="skills-group brutal-box interactive" id="skills-grp-3">
             <h3 class="skills-group-title">Web &amp; Core Strengths</h3>
             <div class="tags-container">
               <span class="tag b brutal-btn">HTML</span>
@@ -1010,7 +1159,7 @@ body {
         <div class="projects-view-layout">
           
           <!-- Project 1 -->
-          <div class="project-card brutal-box interactive">
+          <div class="project-card brutal-box interactive" id="proj-card-1">
             <div class="project-card-header">
               <h3 class="project-card-title">Financial Data Analytics &amp; BI</h3>
               <div class="project-rating">⭐ 4.8</div>
@@ -1027,7 +1176,7 @@ body {
           </div>
 
           <!-- Project 2 -->
-          <div class="project-card brutal-box interactive">
+          <div class="project-card brutal-box interactive" id="proj-card-2">
             <div class="project-card-header">
               <h3 class="project-card-title">Spotify Data Analysis &amp; Visuals</h3>
               <div class="project-rating">⭐ 4.7</div>
@@ -1044,9 +1193,9 @@ body {
           </div>
 
           <!-- Project 3 -->
-          <div class="project-card brutal-box interactive">
+          <div class="project-card brutal-box interactive" id="proj-card-3">
             <div class="project-card-header">
-              <h3 class="project-card-title"> Devil Wildlife Tracker</h3>
+              <h3 class="project-card-title"> Wildlife Tasmanian Devil Tracker</h3>
               <div class="project-rating">⭐ 4.6</div>
             </div>
             <p class="project-card-desc">
@@ -1060,7 +1209,7 @@ body {
           </div>
 
           <!-- Project 4 -->
-          <div class="project-card brutal-box interactive">
+          <div class="project-card brutal-box interactive" id="proj-card-4">
             <div class="project-card-header">
               <h3 class="project-card-title">Swiggy Market Analytics</h3>
               <div class="project-rating">⭐ 4.7</div>
@@ -1076,7 +1225,7 @@ body {
           </div>
 
           <!-- Commits stats widget (Pink) -->
-          <div class="commits-card brutal-box">
+          <div class="commits-card brutal-box interactive" id="commits-card-projects">
             <div class="commits-header">
               <span class="commits-title">Coding Activity</span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
@@ -1101,7 +1250,7 @@ body {
         <div class="education-view-layout">
           
           <div class="edu-list">
-            <div class="edu-card brutal-box interactive">
+            <div class="edu-card brutal-box interactive" id="edu-card-1">
               <div class="edu-icon-wrap">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
               </div>
@@ -1112,7 +1261,7 @@ body {
               </div>
             </div>
 
-            <div class="edu-card brutal-box interactive">
+            <div class="edu-card brutal-box interactive" id="edu-card-2">
               <div class="edu-icon-wrap">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
               </div>
@@ -1125,7 +1274,7 @@ body {
           </div>
 
           <!-- Right Column: Certifications list -->
-          <div class="brutal-box" style="padding: 32px; background-color: var(--white);">
+          <div class="brutal-box interactive" id="edu-card-3" style="padding: 32px; background-color: var(--white);">
             <h4 style="font-family: 'Syne', sans-serif; font-size: 20px; margin-bottom: 20px; text-transform: uppercase;">Extra Certifications</h4>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px;">
               <li style="border-bottom: 1.5px solid var(--black); padding-bottom: 12px;">
@@ -1151,6 +1300,69 @@ body {
 </div>
 
 <script>
+/* ─────────────────────────────────────
+   SOUND FX SYNTHESIS (Web Audio API)
+───────────────────────────────────── */
+let soundEnabled = true;
+const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+let audioCtx = null;
+
+function initAudioContext() {
+  if (!audioCtx) {
+    audioCtx = new AudioContextClass();
+  }
+}
+
+function playClickSound() {
+  if (!soundEnabled) return;
+  initAudioContext();
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  
+  // High-fidelity analog UI switch click
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(950, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(150, audioCtx.currentTime + 0.05);
+  
+  gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+  
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.05);
+}
+
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+  const onSvg = document.getElementById('sound-on-svg');
+  const offSvg = document.getElementById('sound-off-svg');
+  
+  if (soundEnabled) {
+    onSvg.style.display = 'block';
+    offSvg.style.display = 'none';
+    playClickSound();
+  } else {
+    onSvg.style.display = 'none';
+    offSvg.style.display = 'block';
+  }
+}
+
+// Global click event dispatcher for dynamic sounds on all interactive elements
+document.addEventListener('click', (e) => {
+  const target = e.target;
+  const clickableSelectors = 'a, button, .brutal-btn, .sidebar-link, .tag, .project-card, .edu-card, .search-item, .social-btn, .action-icon, .back-btn';
+  
+  if (target.closest(clickableSelectors)) {
+    playClickSound();
+  }
+});
+
 /* ─────────────────────────────────────
    HASH-BASED NAVIGATION ROUTING
 ───────────────────────────────────── */
@@ -1184,48 +1396,79 @@ window.addEventListener('hashchange', handleRouting);
 window.addEventListener('load', handleRouting);
 
 /* ─────────────────────────────────────
-   DASHBOARD SEARCH UTILITY
+   INTERACTIVE SEARCH DROPDOWN OVERLAY
 ───────────────────────────────────── */
-function searchDashboard(query) {
+const searchOverlay = document.getElementById('search-results');
+const searchInput = document.getElementById('db-search');
+
+function openSearchDropdown() {
+  searchOverlay.classList.add('active');
+}
+
+// Close search dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  const wrap = document.getElementById('search-wrapper-div');
+  if (wrap && !wrap.contains(e.target)) {
+    searchOverlay.classList.remove('active');
+  }
+});
+
+function filterSearchDropdown(query) {
   query = query.toLowerCase().trim();
+  const items = searchOverlay.querySelectorAll('.search-item');
+  
   if (!query) {
-    // If query is empty, show all items
-    document.querySelectorAll('.project-card, .edu-card, .tag').forEach(el => {
-      el.style.display = '';
-    });
+    // Show all items if query is empty
+    items.forEach(item => item.style.display = '');
+    searchOverlay.querySelectorAll('.search-group-header').forEach(hdr => hdr.style.display = '');
     return;
   }
-
-  // Filter project cards
-  document.querySelectorAll('.project-card').forEach(card => {
-    const title = card.querySelector('.project-card-title').textContent.toLowerCase();
-    const desc = card.querySelector('.project-card-desc').textContent.toLowerCase();
-    if (title.includes(query) || desc.includes(query)) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
+  
+  // Keep track of how many items are visible per group
+  let projCount = 0, skillCount = 0, eduCount = 0;
+  
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    const isMatch = text.includes(query);
+    item.style.display = isMatch ? '' : 'none';
+    
+    if (isMatch) {
+      const type = item.querySelector('.search-item-meta').textContent.toLowerCase();
+      if (type === 'project') projCount++;
+      else if (type === 'skills') skillCount++;
+      else eduCount++;
     }
   });
+  
+  // Toggle group headers based on item availability
+  const headers = searchOverlay.querySelectorAll('.search-group-header');
+  headers[0].style.display = projCount > 0 ? '' : 'none';
+  headers[1].style.display = skillCount > 0 ? '' : 'none';
+  headers[2].style.display = eduCount > 0 ? '' : 'none';
+}
 
-  // Filter education cards
-  document.querySelectorAll('.edu-card').forEach(card => {
-    const degree = card.querySelector('.edu-degree').textContent.toLowerCase();
-    const school = card.querySelector('.edu-school').textContent.toLowerCase();
-    if (degree.includes(query) || school.includes(query)) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
+function navigateToItem(view, elementId) {
+  // 1. Close dropdown
+  searchOverlay.classList.remove('active');
+  searchInput.value = '';
+  filterSearchDropdown('');
+  
+  // 2. Change tab hash
+  window.location.hash = '#' + view;
+  
+  // 3. Highlight and scroll after view has loaded
+  setTimeout(() => {
+    const targetElement = document.getElementById(elementId);
+    if (targetElement) {
+      // Scroll workspace to element
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Trigger temporary visual flash highlight
+      targetElement.classList.add('highlight-flash');
+      setTimeout(() => {
+        targetElement.classList.remove('highlight-flash');
+      }, 1300);
     }
-  });
-
-  // Filter skills tags
-  document.querySelectorAll('.tag').forEach(tag => {
-    if (tag.textContent.toLowerCase().includes(query)) {
-      tag.style.display = '';
-    } else {
-      tag.style.display = 'none';
-    }
-  });
+  }, 100);
 }
 </script>
 </body>
