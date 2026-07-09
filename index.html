@@ -1,1029 +1,1227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Himanshu Dhiman — AI & ML Developer Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* ── DESIGN SYSTEM & TOKENS ── */
-:root {
-  --border-width: 2.5px;
-  --black: #000000;
-  --mint: #a3e2c9;
-  --mint-light: #cbf3e3;
-  --cream: #faf7ed;
-  --white: #ffffff;
-  --yellow: #fcd34d;
-  --yellow-hover: #fbbf24;
-  --pink: #f2a6d2;
-  --pink-light: #fbcfe8;
-  --blue: #93c5fd;
-  --gray: #e5e7eb;
-  --text-dark: #1e1b18;
-  --text-muted: #5c5955;
-  --shadow-offset: 4px;
-  --shadow-offset-hover: 6px;
-  --transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himanshu Dhiman — AI & ML Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ── DESIGN SYSTEM & TOKENS ── */
+    :root {
+      --border-width: 2.5px;
+      --black: #000000;
+      --mint: #a3e2c9;
+      --mint-light: #cbf3e3;
+      --cream: #faf7ed;
+      --white: #ffffff;
+      --yellow: #fcd34d;
+      --yellow-hover: #fbbf24;
+      --pink: #f2a6d2;
+      --pink-light: #fbcfe8;
+      --blue: #93c5fd;
+      --gray: #e5e7eb;
+      --text-dark: #1e1b18;
+      --text-muted: #5c5955;
+      --shadow-offset: 4px;
+      --shadow-offset-hover: 6px;
+      --transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-/* ── RESET & BASE Styles ── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  background-color: #cbd5e1;
-  background-image: 
-    radial-gradient(#94a3b8 1px, transparent 1px), 
-    radial-gradient(#94a3b8 1px, transparent 1px);
-  background-size: 24px 24px;
-  background-position: 0 0, 12px 12px;
-  color: var(--text-dark);
-  font-family: 'Space Grotesk', sans-serif;
-  padding: 32px;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    /* ── RESET & BASE Styles ── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* ── CUSTOM SCROLLBAR ── */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--cream);
-  border-left: var(--border-width) solid var(--black);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--black);
-  border: 2px solid var(--cream);
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* ── NEO-BRUTALIST UTILITIES ── */
-.brutal-box {
-  background-color: var(--white);
-  border: var(--border-width) solid var(--black);
-  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--black);
-  transition: var(--transition);
-}
-.brutal-box.interactive:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-offset-hover) var(--shadow-offset-hover) 0px var(--black);
-}
-.brutal-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 24px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 14.5px; /* Increased for legibility */
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  color: var(--black);
-  background-color: var(--white);
-  border: var(--border-width) solid var(--black);
-  box-shadow: 3px 3px 0px var(--black);
-  cursor: pointer;
-  transition: var(--transition);
-}
-.brutal-btn:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0px var(--black);
-}
-.brutal-btn:active {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px var(--black);
-}
-.brutal-btn.primary {
-  background-color: var(--black);
-  color: var(--white);
-}
-.brutal-btn.primary:hover {
-  background-color: #262626;
-}
+    body {
+      background-color: #cbd5e1;
+      background-image:
+        radial-gradient(#94a3b8 1px, transparent 1px),
+        radial-gradient(#94a3b8 1px, transparent 1px);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+      color: var(--text-dark);
+      font-family: 'Space Grotesk', sans-serif;
+      padding: 32px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-/* ── MAIN DASHBOARD CONTAINER ── */
-.dashboard {
-  width: 100%;
-  max-width: 1200px;
-  height: 840px;
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  overflow: hidden;
-  border-radius: 4px;
-}
+    /* ── CUSTOM SCROLLBAR ── */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
 
-/* ── SIDEBAR ── */
-.sidebar {
-  background-color: var(--mint);
-  border-right: var(--border-width) solid var(--black);
-  display: flex;
-  flex-direction: column;
-  padding: 40px 24px;
-  justify-content: space-between;
-}
-.sidebar-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 24px;
-  color: var(--black);
-  text-decoration: none;
-  margin-bottom: 48px;
-  transition: var(--transition);
-}
-.sidebar-logo:hover {
-  transform: scale(1.02);
-}
-.sidebar-logo span {
-  display: inline-flex;
-  padding: 4px 8px;
-  border: var(--border-width) solid var(--black);
-  background-color: var(--white);
-  box-shadow: 2px 2px 0px var(--black);
-  font-family: 'DM Mono', monospace;
-  font-size: 16px;
-}
-.sidebar-menu {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.sidebar-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 18px;
-  text-decoration: none;
-  color: var(--black);
-  font-weight: 700;
-  font-size: 16px; /* Increased for legibility */
-  border: var(--border-width) solid transparent;
-  border-radius: 4px;
-  transition: var(--transition);
-}
-.sidebar-link svg {
-  flex-shrink: 0;
-}
-.sidebar-link:hover {
-  background-color: var(--mint-light);
-  border-color: var(--black);
-  box-shadow: 3px 3px 0px var(--black);
-  transform: translate(-1px, -1px);
-}
-.sidebar-link.active {
-  background-color: var(--black);
-  color: var(--white);
-  border-color: var(--black);
-  box-shadow: 3px 3px 0px var(--black);
-  transform: translate(-1px, -1px);
-}
-.sidebar-link.active svg {
-  stroke: var(--white);
-  fill: var(--white);
-}
-.sidebar-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 48px;
-}
+    ::-webkit-scrollbar-track {
+      background: var(--cream);
+      border-left: var(--border-width) solid var(--black);
+    }
 
-/* ── WORKSPACE ── */
-.workspace {
-  background-color: var(--cream);
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-}
+    ::-webkit-scrollbar-thumb {
+      background: var(--black);
+      border: 2px solid var(--cream);
+    }
 
-/* ── TOP HEADER BAR ── */
-.top-bar {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 24px;
-  padding: 24px 40px;
-  border-bottom: var(--border-width) solid var(--black);
-  background-color: var(--white);
-}
-.back-btn {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: var(--border-width) solid var(--black);
-  background-color: var(--white);
-  box-shadow: 2px 2px 0px var(--black);
-  cursor: pointer;
-  transition: var(--transition);
-}
-.back-btn:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px var(--black);
-}
-.search-wrapper {
-  position: relative;
-  max-width: 480px;
-}
-.search-wrapper svg {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  z-index: 10;
-}
-.search-input {
-  width: 100%;
-  padding: 12px 14px 12px 42px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 14.5px; /* Increased for legibility */
-  font-weight: 500;
-  border: var(--border-width) solid var(--black);
-  box-shadow: inset 2px 2px 0px rgba(0,0,0,0.05);
-  outline: none;
-  position: relative;
-  z-index: 9;
-}
-.search-input:focus {
-  background-color: var(--white);
-  box-shadow: 2px 2px 0px var(--black);
-}
+    /* ── NEO-BRUTALIST UTILITIES ── */
+    .brutal-box {
+      background-color: var(--white);
+      border: var(--border-width) solid var(--black);
+      box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--black);
+      transition: var(--transition);
+    }
 
-/* ── SEARCH RESULTS DROPDOWN Overlay ── */
-.search-results-overlay {
-  display: none;
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  width: 100%;
-  max-height: 380px;
-  overflow-y: auto;
-  background-color: var(--white);
-  border: var(--border-width) solid var(--black);
-  box-shadow: 6px 6px 0px var(--black);
-  z-index: 99;
-}
-.search-results-overlay.active {
-  display: block;
-}
-.search-group-header {
-  font-family: 'Syne', sans-serif;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  background-color: var(--cream);
-  padding: 8px 16px;
-  border-bottom: 1.5px solid var(--black);
-  letter-spacing: 0.5px;
-}
-.search-item {
-  padding: 12px 16px;
-  font-size: 14.5px; /* Increased for legibility */
-  font-weight: 700;
-  color: var(--black);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1.5px solid var(--black);
-  transition: var(--transition);
-}
-.search-item:last-child {
-  border-bottom: none;
-}
-.search-item:hover {
-  background-color: var(--mint-light);
-}
-.search-item-meta {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.action-icon {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: var(--border-width) solid var(--black);
-  background-color: var(--white);
-  box-shadow: 2px 2px 0px var(--black);
-  cursor: pointer;
-  transition: var(--transition);
-}
-.action-icon:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px var(--black);
-}
-.profile-avatar {
-  width: 44px;
-  height: 44px;
-  border: var(--border-width) solid var(--black);
-  box-shadow: 2px 2px 0px var(--black);
-  overflow: hidden;
-}
-.profile-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .brutal-box.interactive:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-offset-hover) var(--shadow-offset-hover) 0px var(--black);
+    }
 
-/* ── VIEW SECTIONS (SPA routing) ── */
-.view-section {
-  display: none;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.view-section.active-view {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
+    .brutal-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      /* Increased for legibility */
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      color: var(--black);
+      background-color: var(--white);
+      border: var(--border-width) solid var(--black);
+      box-shadow: 3px 3px 0px var(--black);
+      cursor: pointer;
+      transition: var(--transition);
+    }
 
-/* ── WORKSPACE SCROLL CONTENT ── */
-.workspace-content {
-  padding: 48px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
+    .brutal-btn:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px var(--black);
+    }
 
-/* ── SECTION HEADER ── */
-.section-header {
-  margin-bottom: 32px;
-}
-.section-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 38px;
-  font-weight: 800;
-  color: var(--black);
-  letter-spacing: -1px;
-  line-height: 1.1;
-}
+    .brutal-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px var(--black);
+    }
 
-/* ── FLASH HIGHLIGHT KEYFRAME ── */
-@keyframes flash-box {
-  0% {
-    background-color: var(--yellow);
-    border-color: var(--black);
-    transform: scale(1.02);
-  }
-  50% {
-    background-color: var(--pink-light);
-    transform: scale(1.02);
-  }
-  100% {
-    background-color: inherit;
-    transform: scale(1);
-  }
-}
-.highlight-flash {
-  animation: flash-box 1.2s ease-out;
-}
+    .brutal-btn.primary {
+      background-color: var(--black);
+      color: var(--white);
+    }
 
-/* ── HOME VIEW LAYOUT ── */
-.home-welcome-card {
-  background-color: var(--pink-light);
-  padding: 40px;
-  margin-bottom: 40px;
-}
-.home-welcome-card h3 {
-  font-family: 'Syne', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
-}
-.home-welcome-card p {
-  font-size: 17px; /* Increased for legibility */
-  line-height: 1.7;
-  max-width: 800px;
-}
-.home-summary-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: start;
-}
-.quick-overview-card {
-  padding: 32px;
-}
-.quick-overview-card h4 {
-  font-family: 'Syne', sans-serif;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
+    .brutal-btn.primary:hover {
+      background-color: #262626;
+    }
 
-/* ── PROFILE INFO CARD (ABOUT VIEW) ── */
-.profile-banner {
-  background-color: var(--yellow);
-  padding: 32px 40px;
-  margin-bottom: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 32px;
-}
-.profile-banner-left {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-.profile-banner-pic {
-  width: 130px;
-  height: 130px;
-  border: var(--border-width) solid var(--black);
-  box-shadow: 3px 3px 0px var(--black);
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.profile-banner-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-.profile-banner-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.profile-banner-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: flex-end;
-}
-.profile-name {
-  font-family: 'Syne', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
-}
-.profile-title {
-  font-family: 'DM Mono', monospace;
-  font-size: 15px;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-.profile-email {
-  font-size: 15.5px;
-  color: var(--black);
-  font-weight: 500;
-}
-.social-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 8px;
-}
-.social-btn {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: var(--border-width) solid var(--black);
-  background-color: var(--white);
-  box-shadow: 2px 2px 0px var(--black);
-  text-decoration: none;
-  transition: var(--transition);
-}
-.social-btn:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px var(--black);
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 32px;
-  align-items: start;
-}
-.about-left-col {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-.about-right-col {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
+    /* ── MAIN DASHBOARD CONTAINER ── */
+    .dashboard {
+      width: 100%;
+      max-width: 1200px;
+      height: 840px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      overflow: hidden;
+      border-radius: 4px;
+    }
 
-/* ── STATS CHIPS GRID ── */
-.stats-chips {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin: 32px 0;
-}
-.stat-chip {
-  background-color: var(--white);
-  border: var(--border-width) solid var(--black);
-  padding: 14px 8px;
-  text-align: center;
-  box-shadow: 2px 2px 0px var(--black);
-  transition: var(--transition);
-}
-.stat-chip:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0px var(--black);
-}
-.stat-chip-val {
-  font-family: 'Syne', sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  display: block;
-}
-.stat-chip-lbl {
-  font-size: 10.5px;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  margin-top: 2px;
-}
-.profile-bio {
-  font-size: 16px; /* Increased for legibility */
-  line-height: 1.7;
-  color: var(--text-dark);
-  font-weight: 500;
-  margin-bottom: 32px;
-}
-.profile-actions {
-  display: flex;
-  gap: 16px;
-}
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background-color: var(--mint);
+      border-right: var(--border-width) solid var(--black);
+      display: flex;
+      flex-direction: column;
+      padding: 40px 24px;
+      justify-content: space-between;
+    }
 
-/* ── SKILLS VIEW LAYOUT ── */
-.skills-view-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-.skills-group {
-  padding: 32px;
-}
-.skills-group-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 24px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.tags-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.tag {
-  padding: 10px 20px;
-  font-size: 15px; /* Increased for legibility */
-}
-.tag.c:hover { background-color: var(--yellow); }
-.tag.p:hover { background-color: var(--pink-light); }
-.tag.b:hover { background-color: var(--blue); }
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: var(--black);
+      text-decoration: none;
+      margin-bottom: 48px;
+      transition: var(--transition);
+    }
 
-/* ── PROJECTS VIEW LAYOUT ── */
-.projects-view-layout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-.project-card {
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 280px;
-}
-.project-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-}
-.project-card-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 21px; /* Increased for legibility */
-  font-weight: 800;
-  line-height: 1.25;
-}
-.project-rating {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-family: 'DM Mono', monospace;
-  font-size: 13px;
-  font-weight: 700;
-  flex-shrink: 0;
-  background-color: var(--cream);
-  padding: 4px 8px;
-  border: 1.5px solid var(--black);
-}
-.project-card-desc {
-  font-size: 15.5px; /* Increased for legibility */
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin: 20px 0;
-}
-.project-card-footer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.project-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 12px; /* Increased for legibility */
-  font-weight: 700;
-  padding: 4px 10px;
-  background-color: var(--gray);
-  border: 1.5px solid var(--black);
-}
+    .sidebar-logo:hover {
+      transform: scale(1.02);
+    }
 
-/* ── COMMITS CARD (PROJECTS VIEW) ── */
-.commits-card {
-  background-color: var(--pink);
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  grid-column: span 2;
-}
-.commits-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.commits-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 26px;
-  font-weight: 800;
-  line-height: 1.1;
-}
-.commits-meta {
-  margin-top: 16px;
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-.commits-val {
-  font-family: 'Syne', sans-serif;
-  font-size: 38px;
-  font-weight: 800;
-}
-.commits-lbl {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--text-dark);
-}
-.sparkline-svg {
-  width: 100%;
-  height: 80px;
-  margin-top: 24px;
-  stroke: var(--black);
-  stroke-width: 3.5;
-  fill: none;
-  stroke-linecap: round;
-}
+    .sidebar-logo span {
+      display: inline-flex;
+      padding: 4px 8px;
+      border: var(--border-width) solid var(--black);
+      background-color: var(--white);
+      box-shadow: 2px 2px 0px var(--black);
+      font-family: 'DM Mono', monospace;
+      font-size: 16px;
+    }
 
-/* ── EDUCATION VIEW LAYOUT ── */
-.education-view-layout {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-.edu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.edu-card {
-  padding: 24px;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-.edu-icon-wrap {
-  width: 46px;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--cream);
-  border: var(--border-width) solid var(--black);
-  border-radius: 4px;
-  flex-shrink: 0;
-}
-.edu-details {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.edu-degree {
-  font-family: 'Syne', sans-serif;
-  font-size: 18.5px; /* Increased for legibility */
-  font-weight: 800;
-  color: var(--black);
-  line-height: 1.25;
-}
-.edu-school {
-  font-size: 15px; /* Increased for legibility */
-  font-weight: 500;
-  color: var(--text-muted);
-}
-.edu-period {
-  font-family: 'DM Mono', monospace;
-  font-size: 13px; /* Increased for legibility */
-  color: var(--text-muted);
-  margin-top: 6px;
-}
+    .sidebar-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-/* ── RESPONSIVE DESIGN ── */
-@media(max-width: 1024px) {
-  body {
-    padding: 16px;
-  }
-  .dashboard {
-    grid-template-columns: 1fr;
-    height: auto;
-    max-height: none;
-  }
-  .sidebar {
-    border-right: none;
-    border-bottom: var(--border-width) solid var(--black);
-    padding: 24px;
-  }
-  .sidebar-logo {
-    margin-bottom: 24px;
-  }
-  .sidebar-menu {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .sidebar-link {
-    padding: 10px 14px;
-  }
-  .workspace-content {
-    padding: 32px 24px;
-  }
-  .home-summary-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .profile-banner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 32px 24px;
-  }
-  .profile-banner-left {
-    flex-direction: column;
-    text-align: center;
-  }
-  .profile-banner-actions {
-    align-items: center;
-  }
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .projects-view-layout {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .commits-card {
-    grid-column: span 1;
-  }
-  .education-view-layout {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      text-decoration: none;
+      color: var(--black);
+      font-weight: 700;
+      font-size: 16px;
+      /* Increased for legibility */
+      border: var(--border-width) solid transparent;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
 
-@media(max-width: 600px) {
-  .sidebar-menu {
-    justify-content: center;
-  }
-  .profile-header {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
-    gap: 20px;
-  }
-  .profile-meta-top {
-    flex-direction: column;
-    align-items: center;
-  }
-  .social-buttons {
-    justify-content: center;
-  }
-  .stats-chips {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .profile-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  .profile-actions .brutal-btn {
-    width: 100%;
-    text-align: center;
-  }
-  .top-bar {
-    padding: 20px 24px;
-    grid-template-columns: auto 1fr;
-  }
-  .header-actions {
-    display: none; /* Hide profile thumbnail/bell on very small screens to fit search */
-  }
-}
-</style>
+    .sidebar-link svg {
+      flex-shrink: 0;
+    }
+
+    .sidebar-link:hover {
+      background-color: var(--mint-light);
+      border-color: var(--black);
+      box-shadow: 3px 3px 0px var(--black);
+      transform: translate(-1px, -1px);
+    }
+
+    .sidebar-link.active {
+      background-color: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+      box-shadow: 3px 3px 0px var(--black);
+      transform: translate(-1px, -1px);
+    }
+
+    .sidebar-link.active svg {
+      stroke: var(--white);
+      fill: var(--white);
+    }
+
+    .sidebar-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 48px;
+    }
+
+    /* ── WORKSPACE ── */
+    .workspace {
+      background-color: var(--cream);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    /* ── TOP HEADER BAR ── */
+    .top-bar {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 40px;
+      border-bottom: var(--border-width) solid var(--black);
+      background-color: var(--white);
+    }
+
+    .back-btn {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: var(--border-width) solid var(--black);
+      background-color: var(--white);
+      box-shadow: 2px 2px 0px var(--black);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .back-btn:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px var(--black);
+    }
+
+    .search-wrapper {
+      position: relative;
+      max-width: 480px;
+    }
+
+    .search-wrapper svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px 14px 12px 42px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14.5px;
+      /* Increased for legibility */
+      font-weight: 500;
+      border: var(--border-width) solid var(--black);
+      box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.05);
+      outline: none;
+      position: relative;
+      z-index: 9;
+    }
+
+    .search-input:focus {
+      background-color: var(--white);
+      box-shadow: 2px 2px 0px var(--black);
+    }
+
+    /* ── SEARCH RESULTS DROPDOWN Overlay ── */
+    .search-results-overlay {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      width: 100%;
+      max-height: 380px;
+      overflow-y: auto;
+      background-color: var(--white);
+      border: var(--border-width) solid var(--black);
+      box-shadow: 6px 6px 0px var(--black);
+      z-index: 99;
+    }
+
+    .search-results-overlay.active {
+      display: block;
+    }
+
+    .search-group-header {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background-color: var(--cream);
+      padding: 8px 16px;
+      border-bottom: 1.5px solid var(--black);
+      letter-spacing: 0.5px;
+    }
+
+    .search-item {
+      padding: 12px 16px;
+      font-size: 14.5px;
+      /* Increased for legibility */
+      font-weight: 700;
+      color: var(--black);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid var(--black);
+      transition: var(--transition);
+    }
+
+    .search-item:last-child {
+      border-bottom: none;
+    }
+
+    .search-item:hover {
+      background-color: var(--mint-light);
+    }
+
+    .search-item-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .action-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: var(--border-width) solid var(--black);
+      background-color: var(--white);
+      box-shadow: 2px 2px 0px var(--black);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .action-icon:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px var(--black);
+    }
+
+    .profile-avatar {
+      width: 44px;
+      height: 44px;
+      border: var(--border-width) solid var(--black);
+      box-shadow: 2px 2px 0px var(--black);
+      overflow: hidden;
+    }
+
+    .profile-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── VIEW SECTIONS (SPA routing) ── */
+    .view-section {
+      display: none;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .view-section.active-view {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── WORKSPACE SCROLL CONTENT ── */
+    .workspace-content {
+      padding: 48px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--black);
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+
+    /* ── FLASH HIGHLIGHT KEYFRAME ── */
+    @keyframes flash-box {
+      0% {
+        background-color: var(--yellow);
+        border-color: var(--black);
+        transform: scale(1.02);
+      }
+
+      50% {
+        background-color: var(--pink-light);
+        transform: scale(1.02);
+      }
+
+      100% {
+        background-color: inherit;
+        transform: scale(1);
+      }
+    }
+
+    .highlight-flash {
+      animation: flash-box 1.2s ease-out;
+    }
+
+    /* ── HOME VIEW LAYOUT ── */
+    .home-welcome-card {
+      background-color: var(--pink-light);
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    .home-welcome-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .home-welcome-card p {
+      font-size: 17px;
+      /* Increased for legibility */
+      line-height: 1.7;
+      max-width: 800px;
+    }
+
+    .home-summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .quick-overview-card {
+      padding: 32px;
+    }
+
+    .quick-overview-card h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* ── PROFILE INFO CARD (ABOUT VIEW) ── */
+    .profile-banner {
+      background-color: var(--yellow);
+      padding: 32px 40px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .profile-banner-left {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .profile-banner-pic {
+      width: 130px;
+      height: 130px;
+      border: var(--border-width) solid var(--black);
+      box-shadow: 3px 3px 0px var(--black);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .profile-banner-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .profile-banner-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .profile-banner-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+    }
+
+    .profile-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+
+    .profile-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 15px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .profile-email {
+      font-size: 15.5px;
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: var(--border-width) solid var(--black);
+      background-color: var(--white);
+      box-shadow: 2px 2px 0px var(--black);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-btn:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px var(--black);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .about-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .about-right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* ── STATS CHIPS GRID ── */
+    .stats-chips {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .stat-chip {
+      background-color: var(--white);
+      border: var(--border-width) solid var(--black);
+      padding: 14px 8px;
+      text-align: center;
+      box-shadow: 2px 2px 0px var(--black);
+      transition: var(--transition);
+    }
+
+    .stat-chip:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0px var(--black);
+    }
+
+    .stat-chip-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      display: block;
+    }
+
+    .stat-chip-lbl {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .profile-bio {
+      font-size: 16px;
+      /* Increased for legibility */
+      line-height: 1.7;
+      color: var(--text-dark);
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+
+    .profile-actions {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* ── SKILLS VIEW LAYOUT ── */
+    .skills-view-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .skills-group {
+      padding: 32px;
+    }
+
+    .skills-group-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tag {
+      padding: 10px 20px;
+      font-size: 15px;
+      /* Increased for legibility */
+    }
+
+    .tag.c:hover {
+      background-color: var(--yellow);
+    }
+
+    .tag.p:hover {
+      background-color: var(--pink-light);
+    }
+
+    .tag.b:hover {
+      background-color: var(--blue);
+    }
+
+    /* ── PROJECTS VIEW LAYOUT ── */
+    .projects-view-layout {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .project-card {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px;
+    }
+
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .project-card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 21px;
+      /* Increased for legibility */
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .project-rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+      background-color: var(--cream);
+      padding: 4px 8px;
+      border: 1.5px solid var(--black);
+    }
+
+    .project-card-desc {
+      font-size: 15.5px;
+      /* Increased for legibility */
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 20px 0;
+    }
+
+    .project-card-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      /* Increased for legibility */
+      font-weight: 700;
+      padding: 4px 10px;
+      background-color: var(--gray);
+      border: 1.5px solid var(--black);
+    }
+
+    /* ── COMMITS CARD (PROJECTS VIEW) ── */
+    .commits-card {
+      background-color: var(--pink);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      grid-column: span 2;
+    }
+
+    .commits-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .commits-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .commits-meta {
+      margin-top: 16px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .commits-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+    }
+
+    .commits-lbl {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-dark);
+    }
+
+    .sparkline-svg {
+      width: 100%;
+      height: 80px;
+      margin-top: 24px;
+      stroke: var(--black);
+      stroke-width: 3.5;
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    /* ── EDUCATION VIEW LAYOUT ── */
+    .education-view-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .edu-card {
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .edu-icon-wrap {
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--cream);
+      border: var(--border-width) solid var(--black);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .edu-details {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .edu-degree {
+      font-family: 'Syne', sans-serif;
+      font-size: 18.5px;
+      /* Increased for legibility */
+      font-weight: 800;
+      color: var(--black);
+      line-height: 1.25;
+    }
+
+    .edu-school {
+      font-size: 15px;
+      /* Increased for legibility */
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .edu-period {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      /* Increased for legibility */
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* ── RESPONSIVE DESIGN ── */
+    @media(max-width: 1024px) {
+      body {
+        padding: 16px;
+      }
+
+      .dashboard {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-height: none;
+      }
+
+      .sidebar {
+        border-right: none;
+        border-bottom: var(--border-width) solid var(--black);
+        padding: 24px;
+      }
+
+      .sidebar-logo {
+        margin-bottom: 24px;
+      }
+
+      .sidebar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .sidebar-link {
+        padding: 10px 14px;
+      }
+
+      .workspace-content {
+        padding: 32px 24px;
+      }
+
+      .home-summary-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .profile-banner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 32px 24px;
+      }
+
+      .profile-banner-left {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-banner-actions {
+        align-items: center;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .projects-view-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .commits-card {
+        grid-column: span 1;
+      }
+
+      .education-view-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .sidebar-menu {
+        justify-content: center;
+      }
+
+      .profile-header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .profile-meta-top {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-buttons {
+        justify-content: center;
+      }
+
+      .stats-chips {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .profile-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .profile-actions .brutal-btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .top-bar {
+        padding: 20px 24px;
+        grid-template-columns: auto 1fr;
+      }
+
+      .header-actions {
+        display: none;
+        /* Hide profile thumbnail/bell on very small screens to fit search */
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ══════ MAIN DASHBOARD WINDOW ══════ -->
-<div class="dashboard brutal-box">
+  <!-- ══════ MAIN DASHBOARD WINDOW ══════ -->
+  <div class="dashboard brutal-box">
 
-  <!-- ══════ LEFT SIDEBAR ══════ -->
-  <aside class="sidebar">
-    <div>
-      <a href="#home" class="sidebar-logo">
-        <span>&lt;/&gt;</span> HD
-      </a>
-      <ul class="sidebar-menu">
-        <li>
-          <a href="#home" class="sidebar-link active">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#about" class="sidebar-link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            About Info
-          </a>
-        </li>
-        <li>
-          <a href="#skills" class="sidebar-link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
-            Skills Set
-          </a>
-        </li>
-        <li>
-          <a href="#projects" class="sidebar-link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-            Projects
-          </a>
-        </li>
-        <li>
-          <a href="#education" class="sidebar-link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
-            Education
-          </a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="sidebar-footer">
-      <a href="https://github.com/Dhimanhdg" target="_blank" class="sidebar-link">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        GitHub Profile
-      </a>
-      <a href="https://www.linkedin.com/in/himanshu-dhiman-758b4a260" target="_blank" class="sidebar-link">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
-    </div>
-  </aside>
-
-  <!-- ══════ MAIN WORKSPACE ══════ -->
-  <main class="workspace">
-
-    <!-- ══════ TOP HEADER BAR ══════ -->
-    <header class="top-bar">
-      <button class="back-btn" aria-label="Go Back" onclick="window.history.back()">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      </button>
-      <div class="search-wrapper" id="search-wrapper-div">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="db-search" class="search-input" placeholder="Find skills, projects, certifications..." onfocus="openSearchDropdown()" oninput="filterSearchDropdown(this.value)">
-        
-        <!-- Search Results Dropdown Overlay -->
-        <div id="search-results" class="search-results-overlay">
-          <!-- Projects -->
-          <div class="search-group-header">Projects &amp; Case Studies</div>
-          <div id="search-group-projects">
-            <div class="search-item" onclick="navigateToItem('projects', 'proj-card-1')">
-              <span>Financial Data Analytics</span>
-              <span class="search-item-meta">Project</span>
-            </div>
-            <div class="search-item" onclick="navigateToItem('projects', 'proj-card-2')">
-              <span>Spotify Data Analysis</span>
-              <span class="search-item-meta">Project</span>
-            </div>
-            <div class="search-item" onclick="navigateToItem('projects', 'proj-card-3')">
-              <span>Wildlife Tasmanian Devil Tracker</span>
-              <span class="search-item-meta">Project</span>
-            </div>
-            <div class="search-item" onclick="navigateToItem('projects', 'proj-card-4')">
-              <span>Swiggy Market Analytics</span>
-              <span class="search-item-meta">Project</span>
-            </div>
-            <div class="search-item" onclick="navigateToItem('projects', 'commits-card-projects')">
-              <span>Academic Research Projects (News Curation, Career Recommendation)</span>
-              <span class="search-item-meta">Project</span>
-            </div>
-          </div>
-          <!-- Skills -->
-          <div class="search-group-header">Technical Skills</div>
-          <div id="search-group-skills">
-            <div class="search-item" onclick="navigateToItem('skills', 'skills-grp-1')">
-              <span>Python, SQL, JavaScript, DB Admin</span>
-              <span class="search-item-meta">Skills</span>
-            </div>
-            <div class="search-item" onclick="navigateToItem('skills', 'skills-grp-2')">
-              <span>Machine Learning, Pandas, Power BI</span>
-              <span class="search-item-meta">Skills</span>
-            </div>
-            <div class="search-item" onclick="navigateToItem('skills', 'skills-grp-3')">
-              <span>HTML, CSS, Web UI, Problem Solving</span>
-              <span class="search-item-meta">Skills</span>
-            </div>
-          </div>
-          <!-- Credentials -->
-          <div class="search-group-header">Education &amp; Credentials</div>
-          <div id="search-group-education">
-            <div class="search-item" onclick="navigateToItem('education', 'edu-card-1')">
-              <span>B.E. Computer Science (AI &amp; ML)</span>
-              <span class="search-item-meta">Education</span>
-            </div>
-            <div class="search-item" onclick="navigateToItem('education', 'edu-card-2')">
-              <span>Diploma Computer Science Engineering</span>
-              <span class="search-item-meta">Education</span>
-            </div>
-            <div class="search-item" onclick="navigateToItem('education', 'edu-card-3')">
-              <span>IBM Professional Certification badge</span>
-              <span class="search-item-meta">Credential</span>
-            </div>
-          </div>
-        </div>
+    <!-- ══════ LEFT SIDEBAR ══════ -->
+    <aside class="sidebar">
+      <div>
+        <a href="#home" class="sidebar-logo">
+          <span>&lt;/&gt;</span> HD
+        </a>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="#home" class="sidebar-link active">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="sidebar-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              About Info
+            </a>
+          </li>
+          <li>
+            <a href="#skills" class="sidebar-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <line x1="9" y1="3" x2="9" y2="21" />
+                <line x1="15" y1="3" x2="15" y2="21" />
+                <line x1="3" y1="9" x2="21" y2="9" />
+                <line x1="3" y1="15" x2="21" y2="15" />
+              </svg>
+              Skills Set
+            </a>
+          </li>
+          <li>
+            <a href="#projects" class="sidebar-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+              </svg>
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#education" class="sidebar-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+              </svg>
+              Education
+            </a>
+          </li>
+        </ul>
       </div>
-      
-      <div class="header-actions">
-        <!-- Sound Toggle Button -->
-        <button id="sound-toggle-btn" class="action-icon" aria-label="Toggle Sound" onclick="toggleSound()">
-          <!-- Speaker ON icon -->
-          <svg id="sound-on-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-          <!-- Speaker OFF icon (hidden by default) -->
-          <svg id="sound-off-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-        </button>
-        <button class="action-icon" aria-label="Notifications" onclick="alert('Mechanical pop clicks and a command palette search dropdown are active! Type something above.')">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-        </button>
-        <div class="profile-avatar">
-          <img src="Himanshu Dhiman.jpeg" alt="Himanshu Dhiman">
-        </div>
-      </div>
-    </header>
 
-    <!-- ══════ SCROLL CONTENT ══════ -->
-    <div class="workspace-content">
-      
-      <!-- ── VIEW 1: HOME VIEW ── -->
-      <div id="view-home" class="view-section active-view">
-        <div class="home-welcome-card brutal-box interactive">
-          <h3>Hey, I'm Himanshu Dhiman!</h3>
-          <p>I am an <strong>AI &amp; ML Developer</strong> and Computer Science student. I specialize in cleaning messy data, doing Exploratory Data Analysis (EDA), and building scalable relational databases and Power BI dashboards. Use the navigation panel on the left to explore different views of my workspace.</p>
+      <div class="sidebar-footer">
+        <a href="https://github.com/Dhimanhdg" target="_blank" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+          </svg>
+          GitHub Profile
+        </a>
+        <a href="https://www.linkedin.com/in/himanshu-dhiman-758b4a260" target="_blank" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </aside>
+
+    <!-- ══════ MAIN WORKSPACE ══════ -->
+    <main class="workspace">
+
+      <!-- ══════ TOP HEADER BAR ══════ -->
+      <header class="top-bar">
+        <button class="back-btn" aria-label="Go Back" onclick="window.history.back()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12" />
+            <polyline points="12 19 5 12 12 5" />
+          </svg>
+        </button>
+        <div class="search-wrapper" id="search-wrapper-div">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input type="text" id="db-search" class="search-input" placeholder="Find skills, projects, certifications..."
+            onfocus="openSearchDropdown()" oninput="filterSearchDropdown(this.value)">
+
+          <!-- Search Results Dropdown Overlay -->
+          <div id="search-results" class="search-results-overlay">
+            <!-- Projects -->
+            <div class="search-group-header">Projects &amp; Case Studies</div>
+            <div id="search-group-projects">
+              <div class="search-item" onclick="navigateToItem('projects', 'proj-card-1')">
+                <span>Financial Data Analytics</span>
+                <span class="search-item-meta">Project</span>
+              </div>
+              <div class="search-item" onclick="navigateToItem('projects', 'proj-card-2')">
+                <span>Spotify Data Analysis</span>
+                <span class="search-item-meta">Project</span>
+              </div>
+              <div class="search-item" onclick="navigateToItem('projects', 'proj-card-3')">
+                <span>Wildlife Tasmanian Devil Tracker</span>
+                <span class="search-item-meta">Project</span>
+              </div>
+              <div class="search-item" onclick="navigateToItem('projects', 'proj-card-4')">
+                <span>Swiggy Market Analytics</span>
+                <span class="search-item-meta">Project</span>
+              </div>
+              <div class="search-item" onclick="navigateToItem('projects', 'commits-card-projects')">
+                <span>Academic Research Projects (News Curation, Career Recommendation)</span>
+                <span class="search-item-meta">Project</span>
+              </div>
+            </div>
+            <!-- Skills -->
+            <div class="search-group-header">Technical Skills</div>
+            <div id="search-group-skills">
+              <div class="search-item" onclick="navigateToItem('skills', 'skills-grp-1')">
+                <span>Python, SQL, JavaScript, DB Admin</span>
+                <span class="search-item-meta">Skills</span>
+              </div>
+              <div class="search-item" onclick="navigateToItem('skills', 'skills-grp-2')">
+                <span>Machine Learning, Pandas, Power BI</span>
+                <span class="search-item-meta">Skills</span>
+              </div>
+              <div class="search-item" onclick="navigateToItem('skills', 'skills-grp-3')">
+                <span>HTML, CSS, Web UI, Problem Solving</span>
+                <span class="search-item-meta">Skills</span>
+              </div>
+            </div>
+            <!-- Credentials -->
+            <div class="search-group-header">Education &amp; Credentials</div>
+            <div id="search-group-education">
+              <div class="search-item" onclick="navigateToItem('education', 'edu-card-1')">
+                <span>B.E. Computer Science (AI &amp; ML)</span>
+                <span class="search-item-meta">Education</span>
+              </div>
+              <div class="search-item" onclick="navigateToItem('education', 'edu-card-2')">
+                <span>Diploma Computer Science Engineering</span>
+                <span class="search-item-meta">Education</span>
+              </div>
+              <div class="search-item" onclick="navigateToItem('education', 'edu-card-3')">
+                <span>IBM Professional Certification badge</span>
+                <span class="search-item-meta">Credential</span>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="header-actions">
+          <!-- Sound Toggle Button -->
+          <button id="sound-toggle-btn" class="action-icon" aria-label="Toggle Sound" onclick="toggleSound()">
+            <!-- Speaker ON icon -->
+            <svg id="sound-on-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+            </svg>
+            <!-- Speaker OFF icon (hidden by default) -->
+            <svg id="sound-off-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <line x1="23" y1="9" x2="17" y2="15" />
+              <line x1="17" y1="9" x2="23" y2="15" />
+            </svg>
+          </button>
+          <button class="action-icon" aria-label="Notifications"
+            onclick="alert('Mechanical pop clicks and a command palette search dropdown are active! Type something above.')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+          </button>
+          <div class="profile-avatar">
+            <img src="Himanshu Dhiman.jpeg" alt="Himanshu Dhiman">
+          </div>
+        </div>
+      </header>
+
+      <!-- ══════ SCROLL CONTENT ══════ -->
+      <div class="workspace-content">
+
+        <!-- ── VIEW 1: HOME VIEW ── -->
+        <div id="view-home" class="view-section active-view">
+          <div class="home-welcome-card brutal-box interactive">
+            <h3>Hey, I'm Himanshu Dhiman!</h3>
+            <p>I am an <strong>AI &amp; ML Developer</strong> and Computer Science student. I specialize in cleaning
+              messy data, doing Exploratory Data Analysis (EDA), and building scalable relational databases and Power BI
+              dashboards. Use the navigation panel on the left to explore different views of my workspace.</p>
+          </div>
           <!-- Quick Overview -->
           <div class="quick-overview-card brutal-box interactive">
             <h4>Quick Overview</h4>
@@ -1038,31 +1236,56 @@ body {
               </div>
             </div>
             <p style="font-size: 13.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 24px;">
-              I focus on turning complex datasets into visual stories. My studies center on Artificial Intelligence and Machine Learning paradigms.
+              I focus on turning complex datasets into visual stories. My studies center on Artificial Intelligence and
+              Machine Learning paradigms.
             </p>
             <div style="display: flex; gap: 10px;">
               <a href="#about" class="brutal-btn primary">Read Bio</a>
               <a href="#projects" class="brutal-btn">See Projects</a>
             </div>
           </div>
-          
+
           <!-- Core Data Toolkit Widget -->
-          <div class="commits-card brutal-box interactive" style="grid-column: auto; background-color: var(--blue); display: flex; flex-direction: column; justify-content: space-between;">
-            <div class="commits-header" style="border-bottom: 2px solid var(--black); padding-bottom: 8px; margin-bottom: 12px;">
+          <div class="commits-card brutal-box interactive"
+            style="grid-column: auto; background-color: var(--blue); display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="commits-header"
+              style="border-bottom: 2px solid var(--black); padding-bottom: 8px; margin-bottom: 12px;">
               <span class="commits-title" style="font-size: 20px;">Data Stack &amp; Tools</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                <line x1="6" y1="6" x2="6.01" y2="6" />
+                <line x1="6" y1="18" x2="6.01" y2="18" />
+              </svg>
             </div>
             <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;">
-              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">Python 🐍</span>
-              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">SQL 📊</span>
-              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Pandas</span>
-              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Scikit-Learn</span>
-              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Power BI</span>
-              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Tableau</span>
-              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">Git/GitHub</span>
+              <span class="project-tag brutal-box interactive"
+                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
+                onclick="navigateToItem('skills', 'skills-grp-1')">Python 🐍</span>
+              <span class="project-tag brutal-box interactive"
+                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
+                onclick="navigateToItem('skills', 'skills-grp-1')">SQL 📊</span>
+              <span class="project-tag brutal-box interactive"
+                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
+                onclick="navigateToItem('skills', 'skills-grp-2')">Pandas</span>
+              <span class="project-tag brutal-box interactive"
+                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
+                onclick="navigateToItem('skills', 'skills-grp-2')">Scikit-Learn</span>
+              <span class="project-tag brutal-box interactive"
+                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
+                onclick="navigateToItem('skills', 'skills-grp-2')">Power BI</span>
+              <span class="project-tag brutal-box interactive"
+                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
+                onclick="navigateToItem('skills', 'skills-grp-2')">Tableau</span>
+              <span class="project-tag brutal-box interactive"
+                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
+                onclick="navigateToItem('skills', 'skills-grp-1')">Git/GitHub</span>
             </div>
-            <div style="margin-top: 14px; font-size: 14.5px; line-height: 1.5; color: var(--text-dark); font-weight: 500;">
-              Leveraging statistical computing, database modeling, and interactive dashboards to drive business decision intelligence.
+            <div
+              style="margin-top: 14px; font-size: 14.5px; line-height: 1.5; color: var(--text-dark); font-weight: 500;">
+              Leveraging statistical computing, database modeling, and interactive dashboards to drive business decision
+              intelligence.
             </div>
           </div>
         </div>
@@ -1073,7 +1296,7 @@ body {
         <div class="section-header">
           <h2 class="section-title">Developer Info</h2>
         </div>
-        
+
         <!-- Top Profile Banner -->
         <div class="profile-banner brutal-box interactive">
           <div class="profile-banner-left">
@@ -1086,10 +1309,20 @@ body {
               <p class="profile-email" style="margin-top: 4px; font-weight: 500;">dhimanhimanshu650@gmail.com</p>
               <div class="social-buttons" style="margin-top: 8px;">
                 <a href="https://github.com/Dhimanhdg" target="_blank" class="social-btn" aria-label="GitHub">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                  </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/himanshu-dhiman-758b4a260" target="_blank" class="social-btn" aria-label="LinkedIn">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <a href="https://www.linkedin.com/in/himanshu-dhiman-758b4a260" target="_blank" class="social-btn"
+                  aria-label="LinkedIn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
                 </a>
               </div>
             </div>
@@ -1101,31 +1334,46 @@ body {
             </div>
           </div>
         </div>
-        
+
         <!-- Bottom Layout Grid -->
         <div class="about-grid">
           <!-- Left Column (Bio & Focus Areas) -->
           <div class="about-left-col">
             <div class="brutal-box interactive" style="padding: 32px; background-color: var(--white);">
-              <h4 style="font-family: 'Syne', sans-serif; font-size: 20px; margin-bottom: 16px;">My Story &amp; Professional Focus</h4>
+              <h4 style="font-family: 'Syne', sans-serif; font-size: 20px; margin-bottom: 16px;">My Story &amp;
+                Professional Focus</h4>
               <p class="profile-bio" style="margin-bottom: 24px;">
-                I'm a Computer Science student specializing in AI &amp; ML at Chandigarh University. I love working with Python and SQL to tackle real-world problems — cleaning messy data, doing Exploratory Data Analysis, and building practical data/BI pipelines.
+                I'm a Computer Science student specializing in AI &amp; ML at Chandigarh University. I love working with
+                Python and SQL to tackle real-world problems — cleaning messy data, doing Exploratory Data Analysis, and
+                building practical data/BI pipelines.
               </p>
-              <h5 style="font-family: 'Syne', sans-serif; font-size: 16px; margin-bottom: 12px; text-transform: uppercase; color: var(--text-muted);">Specialized Focus Areas</h5>
+              <h5
+                style="font-family: 'Syne', sans-serif; font-size: 16px; margin-bottom: 12px; text-transform: uppercase; color: var(--text-muted);">
+                Specialized Focus Areas</h5>
               <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <span class="project-tag brutal-box interactive" style="background-color: var(--mint-light); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Machine Learning 🤖</span>
-                <span class="project-tag brutal-box interactive" style="background-color: var(--pink-light); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">Data Engineering ⚙️</span>
-                <span class="project-tag brutal-box interactive" style="background-color: var(--blue); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Data Visualization 📊</span>
-                <span class="project-tag brutal-box interactive" style="background-color: var(--yellow); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">SQL Database Admin 📂</span>
+                <span class="project-tag brutal-box interactive"
+                  style="background-color: var(--mint-light); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
+                  onclick="navigateToItem('skills', 'skills-grp-2')">Machine Learning 🤖</span>
+                <span class="project-tag brutal-box interactive"
+                  style="background-color: var(--pink-light); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
+                  onclick="navigateToItem('skills', 'skills-grp-1')">Data Engineering ⚙️</span>
+                <span class="project-tag brutal-box interactive"
+                  style="background-color: var(--blue); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
+                  onclick="navigateToItem('skills', 'skills-grp-2')">Data Visualization 📊</span>
+                <span class="project-tag brutal-box interactive"
+                  style="background-color: var(--yellow); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
+                  onclick="navigateToItem('skills', 'skills-grp-1')">SQL Database Admin 📂</span>
               </div>
             </div>
           </div>
-          
+
           <!-- Right Column (Stats & Quick Details) -->
           <div class="about-right-col">
             <!-- Stats Achievements -->
             <div class="brutal-box interactive" style="padding: 24px; background-color: var(--white);">
-              <h4 style="font-family: 'Syne', sans-serif; font-size: 18px; margin-bottom: 16px; text-transform: uppercase;">Key Stats</h4>
+              <h4
+                style="font-family: 'Syne', sans-serif; font-size: 18px; margin-bottom: 16px; text-transform: uppercase;">
+                Key Stats</h4>
               <div class="stats-chips" style="margin: 0; grid-template-columns: 1fr 1fr; gap: 12px;">
                 <div class="stat-chip" style="padding: 10px 4px;">
                   <span class="stat-chip-val">7.0</span>
@@ -1145,11 +1393,14 @@ body {
                 </div>
               </div>
             </div>
-            
+
             <!-- Quick Facts list -->
             <div class="brutal-box interactive" style="padding: 24px; background-color: var(--white);">
-              <h4 style="font-family: 'Syne', sans-serif; font-size: 18px; margin-bottom: 16px; text-transform: uppercase;">Location &amp; Info</h4>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-weight: 500; font-size: 14.5px;">
+              <h4
+                style="font-family: 'Syne', sans-serif; font-size: 18px; margin-bottom: 16px; text-transform: uppercase;">
+                Location &amp; Info</h4>
+              <ul
+                style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-weight: 500; font-size: 14.5px;">
                 <li>📍 <strong>Location:</strong> Haryana, India</li>
                 <li>🌏 <strong>Nationality:</strong> Indian</li>
                 <li>💼 <strong>Availability:</strong> Open to Internships</li>
@@ -1166,7 +1417,7 @@ body {
           <h2 class="section-title">Technical Skills</h2>
         </div>
         <div class="skills-view-layout">
-          
+
           <div class="skills-group brutal-box interactive" id="skills-grp-1">
             <h3 class="skills-group-title">Databases &amp; Code</h3>
             <div class="tags-container">
@@ -1212,9 +1463,9 @@ body {
           <h2 class="section-title" style="margin-bottom: 0;">Showcase &amp; Projects</h2>
           <a href="https://github.com/Dhimanhdg" target="_blank" class="brutal-btn">View on GitHub</a>
         </div>
-        
+
         <div class="projects-view-layout">
-          
+
           <!-- Project 1 -->
           <div class="project-card brutal-box interactive" id="proj-card-1">
             <div class="project-card-header">
@@ -1222,7 +1473,8 @@ body {
               <div class="project-rating">⭐ 4.8</div>
             </div>
             <p class="project-card-desc">
-              A database-driven SQL and Power BI analytics dashboard built to track customer lifetime value (CLV) and detect churn risk signals before they impact revenue.
+              A database-driven SQL and Power BI analytics dashboard built to track customer lifetime value (CLV) and
+              detect churn risk signals before they impact revenue.
             </p>
             <div class="project-card-footer">
               <span class="project-tag">SQL</span>
@@ -1239,7 +1491,8 @@ body {
               <div class="project-rating">⭐ 4.7</div>
             </div>
             <p class="project-card-desc">
-              Cleaned raw track catalogs to identify key music success factors. Mapped danceability, energy, and year-over-year artist trends using NumPy and Power BI.
+              Cleaned raw track catalogs to identify key music success factors. Mapped danceability, energy, and
+              year-over-year artist trends using NumPy and Power BI.
             </p>
             <div class="project-card-footer">
               <span class="project-tag">Pandas</span>
@@ -1256,7 +1509,8 @@ body {
               <div class="project-rating">⭐ 4.6</div>
             </div>
             <p class="project-card-desc">
-              A Python-based wildlife monitoring utility designed to clean geo-location logs, analyze movement coordinates, and map population clusters for endangered species.
+              A Python-based wildlife monitoring utility designed to clean geo-location logs, analyze movement
+              coordinates, and map population clusters for endangered species.
             </p>
             <div class="project-card-footer">
               <span class="project-tag">Python</span>
@@ -1273,7 +1527,8 @@ body {
               <div class="project-rating">⭐ 4.7</div>
             </div>
             <p class="project-card-desc">
-              An end-to-end relational database and Power BI visualization pipeline analyzing Swiggy's zonal restaurant and menu catalog structures to uncover market performance insights.
+              An end-to-end relational database and Power BI visualization pipeline analyzing Swiggy's zonal restaurant
+              and menu catalog structures to uncover market performance insights.
             </p>
             <div class="project-card-footer">
               <span class="project-tag">SQL</span>
@@ -1284,18 +1539,28 @@ body {
           </div>
 
           <!-- Research Projects Card (Pink) -->
-          <div class="commits-card brutal-box interactive" id="commits-card-projects" style="grid-column: span 2; background-color: var(--pink);">
-            <div class="commits-header" style="border-bottom: 2px solid var(--black); padding-bottom: 12px; margin-bottom: 16px;">
+          <div class="commits-card brutal-box interactive" id="commits-card-projects"
+            style="grid-column: span 2; background-color: var(--pink);">
+            <div class="commits-header"
+              style="border-bottom: 2px solid var(--black); padding-bottom: 12px; margin-bottom: 16px;">
               <span class="commits-title">Academic Research Projects</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3A2.5 2.5 0 0 1 6.5 0.5H20v16.5H6.5a2.5 2.5 0 0 0-2.5 2.5z"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3A2.5 2.5 0 0 1 6.5 0.5H20v16.5H6.5a2.5 2.5 0 0 0-2.5 2.5z" />
+              </svg>
             </div>
-            
+
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; text-align: left;">
               <!-- Paper 1 -->
               <div>
-                <h4 style="font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; margin-bottom: 8px;">1. Personalized News Curation Using AI</h4>
+                <h4 style="font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; margin-bottom: 8px;">1.
+                  Personalized News Curation Using AI</h4>
                 <p style="font-size: 14.5px; line-height: 1.5; color: var(--text-dark); margin-bottom: 12px;">
-                  Designed and evaluated a content-based recommender system utilizing Natural Language Processing (NLP) and TF-IDF semantic vector space models. Achieved a Mean Average Precision (MAP) score of 0.72 and normalized discounted cumulative gain (nDCG) of 0.68. Improved cold-start recommendation cases by 17% over collaborative filtering baselines.
+                  Designed and evaluated a content-based recommender system utilizing Natural Language Processing (NLP)
+                  and TF-IDF semantic vector space models. Achieved a Mean Average Precision (MAP) score of 0.72 and
+                  normalized discounted cumulative gain (nDCG) of 0.68. Improved cold-start recommendation cases by 17%
+                  over collaborative filtering baselines.
                 </p>
                 <div class="project-card-footer" style="margin-top: auto;">
                   <span class="project-tag" style="background-color: var(--white);">NLP</span>
@@ -1305,9 +1570,13 @@ body {
               </div>
               <!-- Paper 2 -->
               <div>
-                <h4 style="font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; margin-bottom: 8px;">2. Recommend Career Paths Based on Student Profile</h4>
+                <h4 style="font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; margin-bottom: 8px;">2.
+                  Recommend Career Paths Based on Student Profile</h4>
                 <p style="font-size: 14.5px; line-height: 1.5; color: var(--text-dark); margin-bottom: 12px;">
-                  Developed a hybrid career recommendation architecture fusing student aptitudes, interest surveys, and self-rated skills. Built an ensemble machine learning model (Decision Trees, Random Forest, SVM, MLP) reaching 88% overall accuracy and 92% top-3 accuracy. Utilized SHAP-based feature importance explainability.
+                  Developed a hybrid career recommendation architecture fusing student aptitudes, interest surveys, and
+                  self-rated skills. Built an ensemble machine learning model (Decision Trees, Random Forest, SVM, MLP)
+                  reaching 88% overall accuracy and 92% top-3 accuracy. Utilized SHAP-based feature importance
+                  explainability.
                 </p>
                 <div class="project-card-footer" style="margin-top: auto;">
                   <span class="project-tag" style="background-color: var(--white);">Ensemble ML</span>
@@ -1327,13 +1596,18 @@ body {
           <h2 class="section-title">Education &amp; Credentials</h2>
         </div>
         <div class="education-view-layout">
-          
+
           <div class="edu-list">
-            
-            <div class="edu-card brutal-box interactive" id="edu-card-1" style="flex-direction: column; align-items: stretch; gap: 12px;">
+
+            <div class="edu-card brutal-box interactive" id="edu-card-1"
+              style="flex-direction: column; align-items: stretch; gap: 12px;">
               <div style="display: flex; align-items: flex-start; gap: 20px;">
                 <div class="edu-icon-wrap">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                  </svg>
                 </div>
                 <div class="edu-details">
                   <h3 class="edu-degree">B.E. in Computer Science (AI &amp; ML)</h3>
@@ -1342,22 +1616,34 @@ body {
                 </div>
               </div>
               <div style="border-top: 1.5px dashed var(--black); padding-top: 12px; margin-top: 4px;">
-                <strong style="display: block; font-size: 13.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Academic Research Projects:</strong>
-                <ul style="font-size: 14.5px; line-height: 1.5; color: var(--text-dark); padding-left: 20px; list-style-type: square; display: flex; flex-direction: column; gap: 8px;">
+                <strong
+                  style="display: block; font-size: 13.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Academic
+                  Research Projects:</strong>
+                <ul
+                  style="font-size: 14.5px; line-height: 1.5; color: var(--text-dark); padding-left: 20px; list-style-type: square; display: flex; flex-direction: column; gap: 8px;">
                   <li>
-                    <strong>Personalized News Curation using AI:</strong> Designed a content-based recommendation model using TF-IDF and NLP. Achieved a Mean Average Precision (MAP) score of 0.72 and normalized discounted cumulative gain (nDCG) of 0.68. Improved cold-start cases by 17%.
+                    <strong>Personalized News Curation using AI:</strong> Designed a content-based recommendation model
+                    using TF-IDF and NLP. Achieved a Mean Average Precision (MAP) score of 0.72 and normalized
+                    discounted cumulative gain (nDCG) of 0.68. Improved cold-start cases by 17%.
                   </li>
                   <li>
-                    <strong>Recommend Career Paths based on Student Profile:</strong> Developed a hybrid machine learning recommendation system combining aptitude scores, interest surveys, and skills. Built an ensemble model (Random Forest, SVM, MLP) reaching 88% overall accuracy and 92% top-3 accuracy.
+                    <strong>Recommend Career Paths based on Student Profile:</strong> Developed a hybrid machine
+                    learning recommendation system combining aptitude scores, interest surveys, and skills. Built an
+                    ensemble model (Random Forest, SVM, MLP) reaching 88% overall accuracy and 92% top-3 accuracy.
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div class="edu-card brutal-box interactive" id="edu-card-2" style="flex-direction: column; align-items: stretch; gap: 12px;">
+            <div class="edu-card brutal-box interactive" id="edu-card-2"
+              style="flex-direction: column; align-items: stretch; gap: 12px;">
               <div style="display: flex; align-items: flex-start; gap: 20px;">
                 <div class="edu-icon-wrap">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                  </svg>
                 </div>
                 <div class="edu-details">
                   <h3 class="edu-degree">Diploma in Computer Science Engineering</h3>
@@ -1366,31 +1652,45 @@ body {
                 </div>
               </div>
               <div style="border-top: 1.5px dashed var(--black); padding-top: 12px; margin-top: 4px;">
-                <strong style="display: block; font-size: 13.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Industrial Training:</strong>
-                <ul style="font-size: 14.5px; line-height: 1.5; color: var(--text-dark); padding-left: 20px; list-style-type: square; display: flex; flex-direction: column; gap: 6px;">
+                <strong
+                  style="display: block; font-size: 13.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Industrial
+                  Training:</strong>
+                <ul
+                  style="font-size: 14.5px; line-height: 1.5; color: var(--text-dark); padding-left: 20px; list-style-type: square; display: flex; flex-direction: column; gap: 6px;">
                   <li>
-                    <strong>Python Industrial Programming:</strong> Completed 2-Month Industrial Training at the <em>Indian Institute of Computer Education (IICE), Yamuna Nagar</em> (Attended from 26-Jul-2021 to 26-Sep-2021). Obtained a verified <strong>Grade 'A'</strong> (80% to 89% scoring bracket).
+                    <strong>Python Industrial Programming:</strong> Completed 2-Month Industrial Training at the
+                    <em>Indian Institute of Computer Education (IICE), Yamuna Nagar</em> (Attended from 26-Jul-2021 to
+                    26-Sep-2021). Obtained a verified <strong>Grade 'A'</strong> (80% to 89% scoring bracket).
                   </li>
                 </ul>
               </div>
             </div>
-            
+
           </div>
 
           <!-- Right Column: Certifications list -->
           <div class="brutal-box interactive" id="edu-card-3" style="padding: 32px; background-color: var(--white);">
-            <h4 style="font-family: 'Syne', sans-serif; font-size: 20px; margin-bottom: 20px; text-transform: uppercase;">Extra Certifications</h4>
+            <h4
+              style="font-family: 'Syne', sans-serif; font-size: 20px; margin-bottom: 20px; text-transform: uppercase;">
+              Extra Certifications</h4>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px;">
               <li style="border-bottom: 1.5px solid var(--black); padding-bottom: 12px;">
-                <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: block;">IBM Professional</span>
-                <strong style="font-size: 14px; display: block; margin-top: 2px;">Python for Data Science, AI &amp; Dev</strong>
+                <span
+                  style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: block;">IBM
+                  Professional</span>
+                <strong style="font-size: 14px; display: block; margin-top: 2px;">Python for Data Science, AI &amp;
+                  Dev</strong>
               </li>
               <li style="border-bottom: 1.5px solid var(--black); padding-bottom: 12px;">
-                <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: block;">University of London</span>
+                <span
+                  style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: block;">University
+                  of London</span>
                 <strong style="font-size: 14px; display: block; margin-top: 2px;">Machine Learning for All</strong>
               </li>
               <li>
-                <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: block;">UC San Diego</span>
+                <span
+                  style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: block;">UC
+                  San Diego</span>
                 <strong style="font-size: 14px; display: block; margin-top: 2px;">Introduction to Big Data</strong>
               </li>
             </ul>
@@ -1399,181 +1699,182 @@ body {
         </div>
       </div>
 
-    </div>
+  </div>
   </main>
-</div>
+  </div>
 
-<script>
-/* ─────────────────────────────────────
-   SOUND FX SYNTHESIS (Web Audio API)
-───────────────────────────────────── */
-let soundEnabled = true;
-const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-let audioCtx = null;
+  <script>
+    /* ─────────────────────────────────────
+       SOUND FX SYNTHESIS (Web Audio API)
+    ───────────────────────────────────── */
+    let soundEnabled = true;
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
 
-function initAudioContext() {
-  if (!audioCtx) {
-    audioCtx = new AudioContextClass();
-  }
-}
-
-function playClickSound() {
-  if (!soundEnabled) return;
-  initAudioContext();
-  if (audioCtx.state === 'suspended') {
-    audioCtx.resume();
-  }
-  
-  const osc = audioCtx.createOscillator();
-  const gain = audioCtx.createGain();
-  
-  osc.connect(gain);
-  gain.connect(audioCtx.destination);
-  
-  // High-fidelity analog UI switch click
-  osc.type = 'sine';
-  osc.frequency.setValueAtTime(950, audioCtx.currentTime);
-  osc.frequency.exponentialRampToValueAtTime(150, audioCtx.currentTime + 0.05);
-  
-  gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
-  
-  osc.start();
-  osc.stop(audioCtx.currentTime + 0.05);
-}
-
-function toggleSound() {
-  soundEnabled = !soundEnabled;
-  const onSvg = document.getElementById('sound-on-svg');
-  const offSvg = document.getElementById('sound-off-svg');
-  
-  if (soundEnabled) {
-    onSvg.style.display = 'block';
-    offSvg.style.display = 'none';
-    playClickSound();
-  } else {
-    onSvg.style.display = 'none';
-    offSvg.style.display = 'block';
-  }
-}
-
-// Global click event dispatcher for dynamic sounds on all interactive elements
-document.addEventListener('click', (e) => {
-  const target = e.target;
-  const clickableSelectors = 'a, button, .brutal-btn, .sidebar-link, .tag, .project-card, .edu-card, .search-item, .social-btn, .action-icon, .back-btn';
-  
-  if (target.closest(clickableSelectors)) {
-    playClickSound();
-  }
-});
-
-/* ─────────────────────────────────────
-   HASH-BASED NAVIGATION ROUTING
-───────────────────────────────────── */
-function handleRouting() {
-  const hash = window.location.hash || '#home';
-  
-  // 1. Update active states on sidebar navigation links
-  document.querySelectorAll('.sidebar-link').forEach(link => {
-    if (link.getAttribute('href') === hash) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
+    function initAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new AudioContextClass();
+      }
     }
-  });
 
-  // 2. Hide all view sections and show the target view
-  const targetId = 'view-' + hash.substring(1);
-  document.querySelectorAll('.view-section').forEach(sec => {
-    sec.classList.remove('active-view');
-  });
+    function playClickSound() {
+      if (!soundEnabled) return;
+      initAudioContext();
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
 
-  const targetSec = document.getElementById(targetId);
-  if (targetSec) {
-    targetSec.classList.add('active-view');
-    // Scroll workspace back to top on navigation
-    document.querySelector('.workspace').scrollTop = 0;
-  }
-}
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
 
-window.addEventListener('hashchange', handleRouting);
-window.addEventListener('load', handleRouting);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
 
-/* ─────────────────────────────────────
-   INTERACTIVE SEARCH DROPDOWN OVERLAY
-───────────────────────────────────── */
-const searchOverlay = document.getElementById('search-results');
-const searchInput = document.getElementById('db-search');
+      // High-fidelity analog UI switch click
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(950, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(150, audioCtx.currentTime + 0.05);
 
-function openSearchDropdown() {
-  searchOverlay.classList.add('active');
-}
+      gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
 
-// Close search dropdown when clicking outside
-document.addEventListener('click', (e) => {
-  const wrap = document.getElementById('search-wrapper-div');
-  if (wrap && !wrap.contains(e.target)) {
-    searchOverlay.classList.remove('active');
-  }
-});
-
-function filterSearchDropdown(query) {
-  query = query.toLowerCase().trim();
-  const items = searchOverlay.querySelectorAll('.search-item');
-  
-  if (!query) {
-    // Show all items if query is empty
-    items.forEach(item => item.style.display = '');
-    searchOverlay.querySelectorAll('.search-group-header').forEach(hdr => hdr.style.display = '');
-    return;
-  }
-  
-  // Keep track of how many items are visible per group
-  let projCount = 0, skillCount = 0, eduCount = 0;
-  
-  items.forEach(item => {
-    const text = item.textContent.toLowerCase();
-    const isMatch = text.includes(query);
-    item.style.display = isMatch ? '' : 'none';
-    
-    if (isMatch) {
-      const type = item.querySelector('.search-item-meta').textContent.toLowerCase();
-      if (type === 'project') projCount++;
-      else if (type === 'skills') skillCount++;
-      else eduCount++;
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.05);
     }
-  });
-  
-  // Toggle group headers based on item availability
-  const headers = searchOverlay.querySelectorAll('.search-group-header');
-  headers[0].style.display = projCount > 0 ? '' : 'none';
-  headers[1].style.display = skillCount > 0 ? '' : 'none';
-  headers[2].style.display = eduCount > 0 ? '' : 'none';
-}
 
-function navigateToItem(view, elementId) {
-  // 1. Close dropdown
-  searchOverlay.classList.remove('active');
-  searchInput.value = '';
-  filterSearchDropdown('');
-  
-  // 2. Change tab hash
-  window.location.hash = '#' + view;
-  
-  // 3. Highlight and scroll after view has loaded
-  setTimeout(() => {
-    const targetElement = document.getElementById(elementId);
-    if (targetElement) {
-      // Scroll workspace to element
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      // Trigger temporary visual flash highlight
-      targetElement.classList.add('highlight-flash');
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const onSvg = document.getElementById('sound-on-svg');
+      const offSvg = document.getElementById('sound-off-svg');
+
+      if (soundEnabled) {
+        onSvg.style.display = 'block';
+        offSvg.style.display = 'none';
+        playClickSound();
+      } else {
+        onSvg.style.display = 'none';
+        offSvg.style.display = 'block';
+      }
+    }
+
+    // Global click event dispatcher for dynamic sounds on all interactive elements
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+      const clickableSelectors = 'a, button, .brutal-btn, .sidebar-link, .tag, .project-card, .edu-card, .search-item, .social-btn, .action-icon, .back-btn';
+
+      if (target.closest(clickableSelectors)) {
+        playClickSound();
+      }
+    });
+
+    /* ─────────────────────────────────────
+       HASH-BASED NAVIGATION ROUTING
+    ───────────────────────────────────── */
+    function handleRouting() {
+      const hash = window.location.hash || '#home';
+
+      // 1. Update active states on sidebar navigation links
+      document.querySelectorAll('.sidebar-link').forEach(link => {
+        if (link.getAttribute('href') === hash) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+
+      // 2. Hide all view sections and show the target view
+      const targetId = 'view-' + hash.substring(1);
+      document.querySelectorAll('.view-section').forEach(sec => {
+        sec.classList.remove('active-view');
+      });
+
+      const targetSec = document.getElementById(targetId);
+      if (targetSec) {
+        targetSec.classList.add('active-view');
+        // Scroll workspace back to top on navigation
+        document.querySelector('.workspace').scrollTop = 0;
+      }
+    }
+
+    window.addEventListener('hashchange', handleRouting);
+    window.addEventListener('load', handleRouting);
+
+    /* ─────────────────────────────────────
+       INTERACTIVE SEARCH DROPDOWN OVERLAY
+    ───────────────────────────────────── */
+    const searchOverlay = document.getElementById('search-results');
+    const searchInput = document.getElementById('db-search');
+
+    function openSearchDropdown() {
+      searchOverlay.classList.add('active');
+    }
+
+    // Close search dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      const wrap = document.getElementById('search-wrapper-div');
+      if (wrap && !wrap.contains(e.target)) {
+        searchOverlay.classList.remove('active');
+      }
+    });
+
+    function filterSearchDropdown(query) {
+      query = query.toLowerCase().trim();
+      const items = searchOverlay.querySelectorAll('.search-item');
+
+      if (!query) {
+        // Show all items if query is empty
+        items.forEach(item => item.style.display = '');
+        searchOverlay.querySelectorAll('.search-group-header').forEach(hdr => hdr.style.display = '');
+        return;
+      }
+
+      // Keep track of how many items are visible per group
+      let projCount = 0, skillCount = 0, eduCount = 0;
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const isMatch = text.includes(query);
+        item.style.display = isMatch ? '' : 'none';
+
+        if (isMatch) {
+          const type = item.querySelector('.search-item-meta').textContent.toLowerCase();
+          if (type === 'project') projCount++;
+          else if (type === 'skills') skillCount++;
+          else eduCount++;
+        }
+      });
+
+      // Toggle group headers based on item availability
+      const headers = searchOverlay.querySelectorAll('.search-group-header');
+      headers[0].style.display = projCount > 0 ? '' : 'none';
+      headers[1].style.display = skillCount > 0 ? '' : 'none';
+      headers[2].style.display = eduCount > 0 ? '' : 'none';
+    }
+
+    function navigateToItem(view, elementId) {
+      // 1. Close dropdown
+      searchOverlay.classList.remove('active');
+      searchInput.value = '';
+      filterSearchDropdown('');
+
+      // 2. Change tab hash
+      window.location.hash = '#' + view;
+
+      // 3. Highlight and scroll after view has loaded
       setTimeout(() => {
-        targetElement.classList.remove('highlight-flash');
-      }, 1300);
+        const targetElement = document.getElementById(elementId);
+        if (targetElement) {
+          // Scroll workspace to element
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // Trigger temporary visual flash highlight
+          targetElement.classList.add('highlight-flash');
+          setTimeout(() => {
+            targetElement.classList.remove('highlight-flash');
+          }, 1300);
+        }
+      }, 100);
     }
-  }, 100);
-}
-</script>
+  </script>
 </body>
+
 </html>
