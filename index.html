@@ -440,44 +440,44 @@ body {
 }
 
 /* ── PROFILE INFO CARD (ABOUT VIEW) ── */
-.about-view-layout {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-.profile-card {
+.profile-banner {
   background-color: var(--yellow);
-  padding: 40px;
-}
-.profile-header {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 32px;
+  padding: 32px 40px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 32px;
 }
-.profile-pic {
-  width: 160px;
-  height: 160px;
+.profile-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.profile-banner-pic {
+  width: 130px;
+  height: 130px;
   border: var(--border-width) solid var(--black);
   box-shadow: 3px 3px 0px var(--black);
   overflow: hidden;
+  flex-shrink: 0;
 }
-.profile-pic img {
+.profile-banner-pic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
 }
-.profile-meta-wrap {
+.profile-banner-meta {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-.profile-meta-top {
+.profile-banner-actions {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
 }
 .profile-name {
   font-family: 'Syne', sans-serif;
@@ -488,12 +488,12 @@ body {
 }
 .profile-title {
   font-family: 'DM Mono', monospace;
-  font-size: 15px; /* Increased for legibility */
+  font-size: 15px;
   color: var(--text-muted);
   font-weight: 500;
 }
 .profile-email {
-  font-size: 15.5px; /* Increased for legibility */
+  font-size: 15.5px;
   color: var(--black);
   font-weight: 500;
 }
@@ -517,6 +517,22 @@ body {
 .social-btn:hover {
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px var(--black);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.about-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.about-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 /* ── STATS CHIPS GRID ── */
@@ -783,9 +799,22 @@ body {
     grid-template-columns: 1fr;
     gap: 32px;
   }
-  .about-view-layout {
+  .profile-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .profile-banner-left {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-banner-actions {
+    align-items: center;
+  }
+  .about-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
   .projects-view-layout {
     grid-template-columns: 1fr;
@@ -995,17 +1024,16 @@ body {
           <h3>Hey, I'm Himanshu Dhiman!</h3>
           <p>I am an <strong>AI &amp; ML Developer</strong> and Computer Science student. I specialize in cleaning messy data, doing Exploratory Data Analysis (EDA), and building scalable relational databases and Power BI dashboards. Use the navigation panel on the left to explore different views of my workspace.</p>
         </div>
-        <div class="home-summary-grid">
           <!-- Quick Overview -->
           <div class="quick-overview-card brutal-box interactive">
             <h4>Quick Overview</h4>
             <div class="stats-chips" style="margin: 0 0 20px 0; grid-template-columns: 1fr 1fr;">
               <div class="stat-chip">
-                <span class="stat-chip-val">6.9</span>
-                <span class="stat-chip-lbl">CGPA at CU</span>
+                <span class="stat-chip-val" style="font-size: 18px;">AI &amp; ML</span>
+                <span class="stat-chip-lbl">Specialization</span>
               </div>
               <div class="stat-chip">
-                <span class="stat-chip-val">3+</span>
+                <span class="stat-chip-val">5+</span>
                 <span class="stat-chip-lbl">Projects Built</span>
               </div>
             </div>
@@ -1024,14 +1052,14 @@ body {
               <span class="commits-title" style="font-size: 20px;">Data Stack &amp; Tools</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
             </div>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
-              <span class="project-tag" style="background-color: var(--white); font-size: 12px; padding: 4px 8px; font-weight: 700;">Python 🐍</span>
-              <span class="project-tag" style="background-color: var(--white); font-size: 12px; padding: 4px 8px; font-weight: 700;">SQL 📊</span>
-              <span class="project-tag" style="background-color: var(--white); font-size: 12px; padding: 4px 8px; font-weight: 700;">Pandas</span>
-              <span class="project-tag" style="background-color: var(--white); font-size: 12px; padding: 4px 8px; font-weight: 700;">Scikit-Learn</span>
-              <span class="project-tag" style="background-color: var(--white); font-size: 12px; padding: 4px 8px; font-weight: 700;">Power BI</span>
-              <span class="project-tag" style="background-color: var(--white); font-size: 12px; padding: 4px 8px; font-weight: 700;">Tableau</span>
-              <span class="project-tag" style="background-color: var(--white); font-size: 12px; padding: 4px 8px; font-weight: 700;">Git/GitHub</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;">
+              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">Python 🐍</span>
+              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">SQL 📊</span>
+              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Pandas</span>
+              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Scikit-Learn</span>
+              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Power BI</span>
+              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Tableau</span>
+              <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">Git/GitHub</span>
             </div>
             <div style="margin-top: 14px; font-size: 14.5px; line-height: 1.5; color: var(--text-dark); font-weight: 500;">
               Leveraging statistical computing, database modeling, and interactive dashboards to drive business decision intelligence.
@@ -1045,70 +1073,89 @@ body {
         <div class="section-header">
           <h2 class="section-title">Developer Info</h2>
         </div>
-        <div class="about-view-layout">
-          <!-- Profile Card -->
-          <div class="profile-card brutal-box interactive">
-            <div class="profile-header">
-              <div class="profile-pic">
-                <img src="Himanshu Dhiman.jpeg" alt="Himanshu Dhiman">
-              </div>
-              <div class="profile-meta-wrap">
-                <div class="profile-meta-top">
-                  <div>
-                    <h3 class="profile-name">Himanshu Dhiman</h3>
-                    <span class="profile-title">AI &amp; ML Developer</span>
-                  </div>
-                  <div class="social-buttons">
-                    <a href="https://github.com/Dhimanhdg" target="_blank" class="social-btn" aria-label="GitHub">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/himanshu-dhiman-758b4a260" target="_blank" class="social-btn" aria-label="LinkedIn">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                    </a>
-                  </div>
-                </div>
-                <p class="profile-email">dhimanhimanshu650@gmail.com</p>
+        
+        <!-- Top Profile Banner -->
+        <div class="profile-banner brutal-box interactive">
+          <div class="profile-banner-left">
+            <div class="profile-banner-pic">
+              <img src="Himanshu Dhiman.jpeg" alt="Himanshu Dhiman">
+            </div>
+            <div class="profile-banner-meta">
+              <h3 class="profile-name">Himanshu Dhiman</h3>
+              <span class="profile-title">AI &amp; ML Developer</span>
+              <p class="profile-email" style="margin-top: 4px; font-weight: 500;">dhimanhimanshu650@gmail.com</p>
+              <div class="social-buttons" style="margin-top: 8px;">
+                <a href="https://github.com/Dhimanhdg" target="_blank" class="social-btn" aria-label="GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/himanshu-dhiman-758b4a260" target="_blank" class="social-btn" aria-label="LinkedIn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
               </div>
             </div>
-            
-            <div class="stats-chips">
-              <div class="stat-chip">
-                <span class="stat-chip-val">6.9</span>
-                <span class="stat-chip-lbl">CGPA at CU</span>
-              </div>
-              <div class="stat-chip">
-                <span class="stat-chip-val">75%</span>
-                <span class="stat-chip-lbl">Diploma Score</span>
-              </div>
-              <div class="stat-chip">
-                <span class="stat-chip-val">3+</span>
-                <span class="stat-chip-lbl">Projects</span>
-              </div>
-              <div class="stat-chip">
-                <span class="stat-chip-val">3+</span>
-                <span class="stat-chip-lbl">Certs</span>
-              </div>
-            </div>
-
-            <p class="profile-bio">
-              I'm a Computer Science student specializing in AI &amp; ML at Chandigarh University. I love working with Python and SQL to tackle real-world problems — cleaning messy data, doing Exploratory Data Analysis, and building practical data/BI pipelines.
-            </p>
-
-            <div class="profile-actions">
+          </div>
+          <div class="profile-banner-actions">
+            <div style="display: flex; gap: 12px;">
               <a href="mailto:dhimanhimanshu650@gmail.com" class="brutal-btn primary">Say Hello</a>
               <a href="tel:+918168719413" class="brutal-btn">Call Info</a>
             </div>
           </div>
-
-          <!-- Quick facts -->
-          <div class="brutal-box interactive" style="padding: 32px; background-color: var(--white);">
-            <h4 style="font-family: 'Syne', sans-serif; font-size: 20px; margin-bottom: 20px;">Location &amp; Status</h4>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; font-weight: 500;">
-              <li>📍 <strong>Location:</strong> Haryana, India</li>
-              <li>🌏 <strong>Nationality:</strong> Indian</li>
-              <li>💼 <strong>Availability:</strong> Open to Internships / Freelance</li>
-              <li>⚡ <strong>Interests:</strong> Machine Learning, NLP, Data Visualization, System Performance Monitoring</li>
-            </ul>
+        </div>
+        
+        <!-- Bottom Layout Grid -->
+        <div class="about-grid">
+          <!-- Left Column (Bio & Focus Areas) -->
+          <div class="about-left-col">
+            <div class="brutal-box interactive" style="padding: 32px; background-color: var(--white);">
+              <h4 style="font-family: 'Syne', sans-serif; font-size: 20px; margin-bottom: 16px;">My Story &amp; Professional Focus</h4>
+              <p class="profile-bio" style="margin-bottom: 24px;">
+                I'm a Computer Science student specializing in AI &amp; ML at Chandigarh University. I love working with Python and SQL to tackle real-world problems — cleaning messy data, doing Exploratory Data Analysis, and building practical data/BI pipelines.
+              </p>
+              <h5 style="font-family: 'Syne', sans-serif; font-size: 16px; margin-bottom: 12px; text-transform: uppercase; color: var(--text-muted);">Specialized Focus Areas</h5>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <span class="project-tag brutal-box interactive" style="background-color: var(--mint-light); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Machine Learning 🤖</span>
+                <span class="project-tag brutal-box interactive" style="background-color: var(--pink-light); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">Data Engineering ⚙️</span>
+                <span class="project-tag brutal-box interactive" style="background-color: var(--blue); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Data Visualization 📊</span>
+                <span class="project-tag brutal-box interactive" style="background-color: var(--yellow); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">SQL Database Admin 📂</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Column (Stats & Quick Details) -->
+          <div class="about-right-col">
+            <!-- Stats Achievements -->
+            <div class="brutal-box interactive" style="padding: 24px; background-color: var(--white);">
+              <h4 style="font-family: 'Syne', sans-serif; font-size: 18px; margin-bottom: 16px; text-transform: uppercase;">Key Stats</h4>
+              <div class="stats-chips" style="margin: 0; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="stat-chip" style="padding: 10px 4px;">
+                  <span class="stat-chip-val">7.0</span>
+                  <span class="stat-chip-lbl" style="font-size: 9.5px;">CGPA at CU</span>
+                </div>
+                <div class="stat-chip" style="padding: 10px 4px;">
+                  <span class="stat-chip-val">75%</span>
+                  <span class="stat-chip-lbl" style="font-size: 9.5px;">Diploma Score</span>
+                </div>
+                <div class="stat-chip" style="padding: 10px 4px;">
+                  <span class="stat-chip-val">5+</span>
+                  <span class="stat-chip-lbl" style="font-size: 9.5px;">Projects</span>
+                </div>
+                <div class="stat-chip" style="padding: 10px 4px;">
+                  <span class="stat-chip-val">3+</span>
+                  <span class="stat-chip-lbl" style="font-size: 9.5px;">Certs</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Quick Facts list -->
+            <div class="brutal-box interactive" style="padding: 24px; background-color: var(--white);">
+              <h4 style="font-family: 'Syne', sans-serif; font-size: 18px; margin-bottom: 16px; text-transform: uppercase;">Location &amp; Info</h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-weight: 500; font-size: 14.5px;">
+                <li>📍 <strong>Location:</strong> Haryana, India</li>
+                <li>🌏 <strong>Nationality:</strong> Indian</li>
+                <li>💼 <strong>Availability:</strong> Open to Internships</li>
+                <li>📞 <strong>Contact:</strong> +91 8168719413</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -1291,7 +1338,7 @@ body {
                 <div class="edu-details">
                   <h3 class="edu-degree">B.E. in Computer Science (AI &amp; ML)</h3>
                   <span class="edu-school">Chandigarh University (CU), India</span>
-                  <span class="edu-period">Jul 2023 — Jun 2026 (Current) | CGPA: 6.9</span>
+                  <span class="edu-period">Jul 2023 — Jun 2026 (Current) | CGPA: 7.0</span>
                 </div>
               </div>
               <div style="border-top: 1.5px dashed var(--black); padding-top: 12px; margin-top: 4px;">
