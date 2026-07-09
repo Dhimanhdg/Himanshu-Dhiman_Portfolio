@@ -1295,77 +1295,81 @@
 
         <!-- ── VIEW 1: HOME VIEW ── -->
         <div id="view-home" class="view-section active-view">
-          <div class="home-welcome-card brutal-box interactive">
-            <h3>Hey, I'm Himanshu Dhiman!</h3>
-            <p>I am an <strong>AI &amp; ML Developer</strong> and Computer Science student. I specialize in cleaning
-              messy data, doing Exploratory Data Analysis (EDA), and building scalable relational databases and Power BI
-              dashboards. Use the navigation panel on the left to explore different views of my workspace.</p>
-          </div>
-          <!-- Quick Overview -->
-          <div class="quick-overview-card brutal-box interactive">
-            <h4>Quick Overview</h4>
-            <div class="stats-chips" style="margin: 0 0 20px 0; grid-template-columns: 1fr 1fr;">
-              <div class="stat-chip">
-                <span class="stat-chip-val" style="font-size: 18px;">AI &amp; ML</span>
-                <span class="stat-chip-lbl">Specialization</span>
-              </div>
-              <div class="stat-chip">
-                <span class="stat-chip-val">5+</span>
-                <span class="stat-chip-lbl">Projects Built</span>
-              </div>
+          
+          <!-- Top Welcome Card -->
+          <div class="home-welcome-card brutal-box interactive" style="display: grid; grid-template-columns: 1.8fr 1fr; gap: 32px; align-items: center; background-color: var(--pink-light);">
+            <div>
+              <h3 style="font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 12px;">Hey, I'm Himanshu Dhiman!</h3>
+              <p style="font-size: 16px; line-height: 1.6; font-weight: 500;">
+                I am an <strong>AI &amp; ML Developer</strong> and Computer Science student. I specialize in cleaning messy datasets, performing deep Exploratory Data Analysis, and engineering interactive data pipelines and business dashboards.
+              </p>
             </div>
-            <p style="font-size: 13.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 24px;">
-              I focus on turning complex datasets into visual stories. My studies center on Artificial Intelligence and
-              Machine Learning paradigms.
-            </p>
-            <div style="display: flex; gap: 10px;">
-              <a href="#about" class="brutal-btn primary">Read Bio</a>
-              <a href="#projects" class="brutal-btn">See Projects</a>
+            <!-- System Status Console -->
+            <div class="brutal-box" style="padding: 16px; background-color: var(--white); font-family: 'DM Mono', monospace; font-size: 11.5px; border-width: 2px;">
+              <div style="border-bottom: 1.5px solid var(--black); padding-bottom: 6px; margin-bottom: 8px; font-weight: 700; text-transform: uppercase;">💻 System Status</div>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px;">
+                <li><span style="color: var(--text-muted);">USER:</span> Dhimanhdg</li>
+                <li><span style="color: var(--text-muted);">ROLE:</span> AI &amp; ML Specialist</li>
+                <li><span style="color: var(--text-muted);">UNI:</span> Chandigarh Univ</li>
+                <li><span style="color: var(--text-muted);">STATUS:</span> Open to Internships</li>
+              </ul>
             </div>
           </div>
 
-          <!-- Core Data Toolkit Widget -->
-          <div class="commits-card brutal-box interactive"
-            style="grid-column: auto; background-color: var(--blue); display: flex; flex-direction: column; justify-content: space-between;">
-            <div class="commits-header"
-              style="border-bottom: 2px solid var(--black); padding-bottom: 8px; margin-bottom: 12px;">
-              <span class="commits-title" style="font-size: 20px;">Data Stack &amp; Tools</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
-                <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
-                <line x1="6" y1="6" x2="6.01" y2="6" />
-                <line x1="6" y1="18" x2="6.01" y2="18" />
-              </svg>
+          <!-- Bottom Grid Columns -->
+          <div class="home-summary-grid">
+            
+            <!-- Quick Overview Card -->
+            <div class="quick-overview-card brutal-box interactive" style="background-color: var(--white); height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h4 style="font-family: 'Syne', sans-serif; font-size: 20px; margin-bottom: 20px; text-transform: uppercase; border-bottom: 2px solid var(--black); padding-bottom: 8px;">Quick Overview</h4>
+                <div class="stats-chips" style="margin: 16px 0; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="stat-chip" style="padding: 10px 4px; background-color: var(--cream);">
+                    <span class="stat-chip-val" style="font-size: 16px;">AI &amp; ML</span>
+                    <span class="stat-chip-lbl" style="font-size: 9px;">Specialization</span>
+                  </div>
+                  <div class="stat-chip" style="padding: 10px 4px; background-color: var(--cream);">
+                    <span class="stat-chip-val" style="font-size: 16px;">5+</span>
+                    <span class="stat-chip-lbl" style="font-size: 9px;">Projects Built</span>
+                  </div>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-dark); font-weight: 500; margin-bottom: 20px;">
+                  I translate complex, high-dimensional datasets into clean visual narratives. My academic research and engineering projects focus on neural networks, statistical modeling, and database systems.
+                </p>
+              </div>
+              <div style="display: flex; gap: 12px; margin-top: auto;">
+                <a href="#about" class="brutal-btn primary" style="font-size: 13px; padding: 10px 18px;">Read Bio</a>
+                <a href="#projects" class="brutal-btn" style="font-size: 13px; padding: 10px 18px;">See Projects</a>
+              </div>
             </div>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;">
-              <span class="project-tag brutal-box interactive"
-                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
-                onclick="navigateToItem('skills', 'skills-grp-1')">Python 🐍</span>
-              <span class="project-tag brutal-box interactive"
-                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
-                onclick="navigateToItem('skills', 'skills-grp-1')">SQL 📊</span>
-              <span class="project-tag brutal-box interactive"
-                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
-                onclick="navigateToItem('skills', 'skills-grp-2')">Pandas</span>
-              <span class="project-tag brutal-box interactive"
-                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
-                onclick="navigateToItem('skills', 'skills-grp-2')">Scikit-Learn</span>
-              <span class="project-tag brutal-box interactive"
-                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
-                onclick="navigateToItem('skills', 'skills-grp-2')">Power BI</span>
-              <span class="project-tag brutal-box interactive"
-                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
-                onclick="navigateToItem('skills', 'skills-grp-2')">Tableau</span>
-              <span class="project-tag brutal-box interactive"
-                style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
-                onclick="navigateToItem('skills', 'skills-grp-1')">Git/GitHub</span>
+
+            <!-- Core Data Toolkit Widget -->
+            <div class="commits-card brutal-box interactive" style="grid-column: auto; background-color: var(--blue); height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 32px;">
+              <div>
+                <div class="commits-header" style="border-bottom: 2px solid var(--black); padding-bottom: 8px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+                  <span class="commits-title" style="font-size: 20px; text-transform: uppercase;">Data Stack &amp; Tools</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                    <line x1="6" y1="6" x2="6.01" y2="6" />
+                    <line x1="6" y1="18" x2="6.01" y2="18" />
+                  </svg>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;">
+                  <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">Python 🐍</span>
+                  <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">SQL 📊</span>
+                  <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Pandas</span>
+                  <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Scikit-Learn</span>
+                  <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Power BI</span>
+                  <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Tableau</span>
+                  <span class="project-tag brutal-box interactive" style="background-color: var(--white); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">Git/GitHub</span>
+                </div>
+              </div>
+              <div style="margin-top: 24px; font-size: 14px; line-height: 1.5; color: var(--text-dark); font-weight: 500;">
+                Leveraging statistical computing, database modeling, and interactive dashboards to drive business decision intelligence.
+              </div>
             </div>
-            <div
-              style="margin-top: 14px; font-size: 14.5px; line-height: 1.5; color: var(--text-dark); font-weight: 500;">
-              Leveraging statistical computing, database modeling, and interactive dashboards to drive business decision
-              intelligence.
-            </div>
+
           </div>
         </div>
       </div>
