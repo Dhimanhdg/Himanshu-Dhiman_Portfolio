@@ -1547,12 +1547,14 @@
         <div class="section-header">
           <h2 class="section-title">Developer Info</h2>
         </div>
-
+ 
         <!-- Top Profile Banner -->
-        <div class="profile-banner brutal-box interactive">
+        <div class="profile-banner brutal-box interactive" style="background-color: var(--white); box-shadow: 4px 4px 0 var(--black);">
           <div class="profile-banner-left">
-            <div class="profile-banner-pic">
-              <img src="Himanshu Dhiman.jpeg" alt="Himanshu Dhiman">
+            <div class="profile-banner-pic" style="position: relative; overflow: visible;">
+              <img src="Himanshu Dhiman.jpeg" alt="Himanshu Dhiman" style="width: 100%; height: 100%; object-fit: cover;">
+              <!-- Live Active Status Dot -->
+              <span style="position: absolute; bottom: 0; right: 0; width: 14px; height: 14px; background-color: #a3e2c9; border: 2.5px solid var(--black); border-radius: 50%;" title="Status: Online"></span>
             </div>
             <div class="profile-banner-meta">
               <h3 class="profile-name">Himanshu Dhiman</h3>
@@ -1560,7 +1562,7 @@
               <p class="profile-email" style="margin-top: 4px; font-weight: 500;">dhimanhimanshu650@gmail.com</p>
               <div class="social-buttons" style="margin-top: 8px;">
                 <a href="https://github.com/Dhimanhdg" target="_blank" class="social-btn" aria-label="GitHub">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path
                       d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
@@ -1568,7 +1570,7 @@
                 </a>
                 <a href="https://www.linkedin.com/in/himanshu-dhiman-758b4a260" target="_blank" class="social-btn"
                   aria-label="LinkedIn">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                     <rect x="2" y="9" width="4" height="12" />
@@ -1585,78 +1587,96 @@
             </div>
           </div>
         </div>
-
+ 
         <!-- Bottom Layout Grid -->
         <div class="about-grid">
           <!-- Left Column (Bio & Focus Areas) -->
           <div class="about-left-col">
-            <div class="brutal-box interactive" style="padding: 32px; background-color: var(--white);">
-              <h4 style="font-family: 'Syne', sans-serif; font-size: 20px; margin-bottom: 16px;">My Story &amp;
-                Professional Focus</h4>
-              <p class="profile-bio" style="margin-bottom: 24px;">
-                I'm a Computer Science student specializing in AI &amp; ML at Chandigarh University. I love working with
-                Python and SQL to tackle real-world problems — cleaning messy data, doing Exploratory Data Analysis, and
-                building practical data/BI pipelines.
-              </p>
-              <h5
-                style="font-family: 'Syne', sans-serif; font-size: 16px; margin-bottom: 12px; text-transform: uppercase; color: var(--text-muted);">
-                Specialized Focus Areas</h5>
-              <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <span class="project-tag brutal-box interactive"
-                  style="background-color: var(--mint-light); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
-                  onclick="navigateToItem('skills', 'skills-grp-2')">Machine Learning 🤖</span>
-                <span class="project-tag brutal-box interactive"
-                  style="background-color: var(--pink-light); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
-                  onclick="navigateToItem('skills', 'skills-grp-1')">Data Engineering ⚙️</span>
-                <span class="project-tag brutal-box interactive"
-                  style="background-color: var(--blue); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
-                  onclick="navigateToItem('skills', 'skills-grp-2')">Data Visualization 📊</span>
-                <span class="project-tag brutal-box interactive"
-                  style="background-color: var(--yellow); font-size: 13px; padding: 6px 12px; font-weight: 700; cursor: pointer;"
-                  onclick="navigateToItem('skills', 'skills-grp-1')">SQL Database Admin 📂</span>
+            <div class="brutal-box interactive" style="padding: 32px; background-color: var(--white); height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h4 style="font-family: 'Syne', sans-serif; font-size: 20px; margin-bottom: 16px; border-bottom: 2px solid var(--black); padding-bottom: 8px;">My Story &amp; Professional Focus</h4>
+                <p class="profile-bio" style="margin-bottom: 24px; font-size: 14.5px; line-height: 1.6; color: var(--text-dark); font-weight: 500;">
+                  I'm a Computer Science student specializing in AI &amp; ML at Chandigarh University. I love working with Python and SQL to tackle real-world problems — cleaning messy data, doing Exploratory Data Analysis, and building practical data/BI pipelines.
+                </p>
+                
+                <!-- My Workflow Philosophy (Premium Addition) -->
+                <h5 style="font-family: 'Syne', sans-serif; font-size: 15px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 800;">🛠️ Workflow Philosophy</h5>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; padding-left: 0;">
+                  <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.4; font-weight: 500;">
+                    <span style="color: var(--pink); font-size: 16px; line-height: 1;">✔</span>
+                    <span><strong>Clean Data First:</strong> I prioritize rigorous cleaning and schema validation before designing any forecasting models.</span>
+                  </li>
+                  <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.4; font-weight: 500;">
+                    <span style="color: var(--pink); font-size: 16px; line-height: 1;">✔</span>
+                    <span><strong>Visual Storytelling:</strong> I design dashboards in Power BI that transform multi-dimensional metrics into visual stories.</span>
+                  </li>
+                  <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.4; font-weight: 500;">
+                    <span style="color: var(--pink); font-size: 16px; line-height: 1;">✔</span>
+                    <span><strong>Query Optimization:</strong> I focus on indexing and layout design to keep database response times lightning-fast.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h5 style="font-family: 'Syne', sans-serif; font-size: 14px; margin-bottom: 12px; text-transform: uppercase; color: var(--text-muted); font-weight: 800;">Specialized Focus Areas</h5>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                  <span class="project-tag brutal-box interactive" style="background-color: var(--mint-light); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Machine Learning 🤖</span>
+                  <span class="project-tag brutal-box interactive" style="background-color: var(--pink-light); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">Data Engineering ⚙️</span>
+                  <span class="project-tag brutal-box interactive" style="background-color: var(--blue); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-2')">Data Visualization 📊</span>
+                  <span class="project-tag brutal-box interactive" style="background-color: var(--yellow); font-size: 12.5px; padding: 6px 12px; font-weight: 700; cursor: pointer;" onclick="navigateToItem('skills', 'skills-grp-1')">SQL Database Admin 📂</span>
+                </div>
               </div>
             </div>
           </div>
-
+ 
           <!-- Right Column (Stats & Quick Details) -->
-          <div class="about-right-col">
+          <div class="about-right-col" style="display: flex; flex-direction: column; gap: 24px;">
             <!-- Stats Achievements -->
             <div class="brutal-box interactive" style="padding: 24px; background-color: var(--white);">
-              <h4
-                style="font-family: 'Syne', sans-serif; font-size: 18px; margin-bottom: 16px; text-transform: uppercase;">
-                Key Stats</h4>
+              <h4 style="font-family: 'Syne', sans-serif; font-size: 18px; margin-bottom: 16px; text-transform: uppercase; border-bottom: 2px solid var(--black); padding-bottom: 6px;">Key Metrics</h4>
               <div class="stats-chips" style="margin: 0; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div class="stat-chip" style="padding: 10px 4px;">
-                  <span class="stat-chip-val">7.0</span>
+                <div class="stat-chip" style="padding: 12px 4px; cursor: pointer; background-color: var(--cream);" onclick="window.location.hash = '#education'">
+                  <span class="stat-chip-val" style="font-size: 20px;">7.0</span>
                   <span class="stat-chip-lbl" style="font-size: 9.5px;">CGPA at CU</span>
                 </div>
-                <div class="stat-chip" style="padding: 10px 4px;">
-                  <span class="stat-chip-val">75%</span>
+                <div class="stat-chip" style="padding: 12px 4px; cursor: pointer; background-color: var(--cream);" onclick="window.location.hash = '#education'">
+                  <span class="stat-chip-val" style="font-size: 20px;">75%</span>
                   <span class="stat-chip-lbl" style="font-size: 9.5px;">Diploma Score</span>
                 </div>
-                <div class="stat-chip" style="padding: 10px 4px;">
-                  <span class="stat-chip-val">5+</span>
-                  <span class="stat-chip-lbl" style="font-size: 9.5px;">Projects</span>
+                <div class="stat-chip" style="padding: 12px 4px; cursor: pointer; background-color: var(--cream);" onclick="window.location.hash = '#projects'">
+                  <span class="stat-chip-val" style="font-size: 20px;">5+</span>
+                  <span class="stat-chip-lbl" style="font-size: 9.5px;">Projects Built</span>
                 </div>
-                <div class="stat-chip" style="padding: 10px 4px;">
-                  <span class="stat-chip-val">3+</span>
-                  <span class="stat-chip-lbl" style="font-size: 9.5px;">Certs</span>
+                <div class="stat-chip" style="padding: 12px 4px; cursor: pointer; background-color: var(--cream);" onclick="navigateToItem('education', 'edu-card-3')">
+                  <span class="stat-chip-val" style="font-size: 20px;">3+</span>
+                  <span class="stat-chip-lbl" style="font-size: 9.5px;">Certifications</span>
                 </div>
               </div>
             </div>
-
-            <!-- Quick Facts list -->
-            <div class="brutal-box interactive" style="padding: 24px; background-color: var(--white);">
-              <h4
-                style="font-family: 'Syne', sans-serif; font-size: 18px; margin-bottom: 16px; text-transform: uppercase;">
-                Location &amp; Info</h4>
-              <ul
-                style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-weight: 500; font-size: 14.5px;">
-                <li>📍 <strong>Location:</strong> Haryana, India</li>
-                <li>🌏 <strong>Nationality:</strong> Indian</li>
-                <li>💼 <strong>Availability:</strong> Open to Internships</li>
-                <li>📞 <strong>Contact:</strong> +91 8168719413</li>
-              </ul>
+ 
+            <!-- Quick Facts list (Styled as brutalist cards) -->
+            <div class="brutal-box interactive" style="padding: 24px; background-color: var(--white); flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h4 style="font-family: 'Syne', sans-serif; font-size: 18px; margin-bottom: 16px; text-transform: uppercase; border-bottom: 2px solid var(--black); padding-bottom: 6px;">Location &amp; Info</h4>
+                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
+                  <div class="brutal-box" style="padding: 8px 12px; background-color: var(--cream); border-width: 1.5px; font-size: 13.5px; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                    <span>📍</span>
+                    <span>Haryana, India</span>
+                  </div>
+                  <div class="brutal-box" style="padding: 8px 12px; background-color: var(--cream); border-width: 1.5px; font-size: 13.5px; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                    <span>🌏</span>
+                    <span>Indian Nationality</span>
+                  </div>
+                  <div class="brutal-box" style="padding: 8px 12px; background-color: var(--cream); border-width: 1.5px; font-size: 13.5px; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                    <span>💼</span>
+                    <span>Open to Internships</span>
+                  </div>
+                  <a href="tel:+918168719413" class="brutal-box interactive" style="padding: 8px 12px; background-color: var(--white); border-width: 1.5px; font-size: 13.5px; font-weight: 700; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--black); box-shadow: 2px 2px 0 var(--black); transition: var(--transition);">
+                    <span>📞</span>
+                    <span>+91 8168719413</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
