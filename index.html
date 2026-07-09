@@ -1129,6 +1129,51 @@
     .home-welcome-pic-box:hover .home-welcome-pic {
       transform: scale(1.04);
     }
+
+    /* ── TERMINAL INTERACTIVE CONSOLE ── */
+    .terminal-console-card {
+      transition: var(--transition);
+    }
+    .terminal-console-card:hover {
+      transform: translate(-2px, -2px) !important;
+      box-shadow: 6px 6px 0px var(--black) !important;
+      border-color: #a3e2c9 !important;
+    }
+    .terminal-results-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: -20px;
+      right: -20px;
+      background-color: #161514;
+      border: 2px solid #a3e2c9;
+      box-shadow: 4px 4px 0px var(--black);
+      z-index: 99;
+      max-height: 180px;
+      overflow-y: auto;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+    }
+    .terminal-results-dropdown.active {
+      display: block;
+    }
+    .terminal-result-item {
+      padding: 10px 16px;
+      border-bottom: 1.5px solid #2d2a29;
+      cursor: pointer;
+      color: #6fb096;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+    .terminal-result-item:last-child {
+      border-bottom: none;
+    }
+    .terminal-result-item:hover {
+      background-color: #2d2a29;
+      color: #a3e2c9;
+    }
   </style>
 </head>
 
@@ -1364,8 +1409,8 @@
               </div>
             </div>
 
-            <!-- Column 3: Green CRT System Status Console -->
-            <div class="brutal-box" style="padding: 20px; background-color: #161514; border-width: 2.5px; box-shadow: 4px 4px 0 var(--black); font-family: 'DM Mono', monospace; font-size: 11px; color: #a3e2c9; display: flex; flex-direction: column; justify-content: space-between; height: 100%; min-height: 150px;">
+            <!-- Column 3: Green CRT System Status Console (Interactive Search) -->
+            <div class="brutal-box interactive terminal-console-card" style="position: relative; padding: 20px; background-color: #161514; border-width: 2.5px; box-shadow: 4px 4px 0 var(--black); font-family: 'DM Mono', monospace; font-size: 11px; color: #a3e2c9; display: flex; flex-direction: column; justify-content: space-between; height: 100%; min-height: 170px; cursor: text;" onclick="document.getElementById('terminal-search-input').focus(); event.stopPropagation();">
               <div>
                 <div style="border-bottom: 1.5px solid #a3e2c9; padding-bottom: 6px; margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center;">
                   <span>💻 SYSTEM CONSOLE</span>
@@ -1378,8 +1423,54 @@
                   <li><span style="color: #6fb096;">[STATUS]:</span> Open_To_Internships</li>
                 </ul>
               </div>
-              <div style="margin-top: 12px; font-size: 10.5px; color: #6fb096;">
-                $ fetch portfolio_data --live <span class="terminal-cursor">_</span>
+              
+              <!-- Input Prompt -->
+              <div style="margin-top: 12px; position: relative;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <span style="color: #6fb096; flex-shrink: 0;">$ search:</span>
+                  <input type="text" id="terminal-search-input" style="background: transparent; border: none; outline: none; color: #a3e2c9; font-family: 'DM Mono', monospace; font-size: 11px; flex-grow: 1; padding: 0; caret-color: #a3e2c9;" placeholder="type to find..." onfocus="openTerminalDropdown()" oninput="filterTerminalDropdown(this.value)" autocomplete="off" onclick="event.stopPropagation();">
+                  <span class="terminal-cursor" id="terminal-caret">_</span>
+                </div>
+                
+                <!-- Terminal Search Dropdown Overlay -->
+                <div id="terminal-search-results" class="terminal-results-dropdown">
+                  <div class="terminal-result-item" onclick="navigateToItem('projects', 'proj-card-1'); event.stopPropagation();">
+                    <span>[PROJ] Swiggy CLV Model</span>
+                    <span>GO</span>
+                  </div>
+                  <div class="terminal-result-item" onclick="navigateToItem('projects', 'proj-card-2'); event.stopPropagation();">
+                    <span>[PROJ] Spotify Analytics</span>
+                    <span>GO</span>
+                  </div>
+                  <div class="terminal-result-item" onclick="navigateToItem('projects', 'proj-card-3'); event.stopPropagation();">
+                    <span>[PROJ] Wildlife Tracker</span>
+                    <span>GO</span>
+                  </div>
+                  <div class="terminal-result-item" onclick="navigateToItem('projects', 'proj-card-4'); event.stopPropagation();">
+                    <span>[PROJ] Swiggy Markets</span>
+                    <span>GO</span>
+                  </div>
+                  <div class="terminal-result-item" onclick="navigateToItem('skills', 'skills-grp-1'); event.stopPropagation();">
+                    <span>[SKILL] Python &amp; SQL</span>
+                    <span>GO</span>
+                  </div>
+                  <div class="terminal-result-item" onclick="navigateToItem('skills', 'skills-grp-2'); event.stopPropagation();">
+                    <span>[SKILL] ML &amp; BI</span>
+                    <span>GO</span>
+                  </div>
+                  <div class="terminal-result-item" onclick="navigateToItem('skills', 'skills-grp-3'); event.stopPropagation();">
+                    <span>[SKILL] Core Strengths</span>
+                    <span>GO</span>
+                  </div>
+                  <div class="terminal-result-item" onclick="navigateToItem('education', 'edu-card-1'); event.stopPropagation();">
+                    <span>[EDU] B.E. CS AI &amp; ML</span>
+                    <span>GO</span>
+                  </div>
+                  <div class="terminal-result-item" onclick="navigateToItem('education', 'edu-card-2'); event.stopPropagation();">
+                    <span>[EDU] Diploma CS Engg</span>
+                    <span>GO</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -2074,10 +2165,15 @@
     }
 
     function navigateToItem(view, elementId) {
-      // 1. Close dropdown
+      // 1. Close search overlays
       searchOverlay.classList.remove('active');
       searchInput.value = '';
       filterSearchDropdown('');
+
+      const termResults = document.getElementById('terminal-search-results');
+      if (termResults) termResults.classList.remove('active');
+      const termInput = document.getElementById('terminal-search-input');
+      if (termInput) termInput.value = '';
 
       // 2. Change tab hash
       window.location.hash = '#' + view;
@@ -2096,6 +2192,33 @@
         }
       }, 100);
     }
+
+    /* ── TERMINAL SEARCH FUNCTIONS ── */
+    function openTerminalDropdown() {
+      const dropdown = document.getElementById('terminal-search-results');
+      if (dropdown) dropdown.classList.add('active');
+    }
+
+    function filterTerminalDropdown(query) {
+      query = query.toLowerCase().trim();
+      const dropdown = document.getElementById('terminal-search-results');
+      if (!dropdown) return;
+      const items = dropdown.querySelectorAll('.terminal-result-item');
+      
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(query) ? '' : 'none';
+      });
+    }
+
+    // Global listener to close terminal search when clicking outside
+    document.addEventListener('click', (e) => {
+      const termCard = document.querySelector('.terminal-console-card');
+      const termResults = document.getElementById('terminal-search-results');
+      if (termCard && !termCard.contains(e.target) && termResults) {
+        termResults.classList.remove('active');
+      }
+    });
   </script>
 </body>
 
