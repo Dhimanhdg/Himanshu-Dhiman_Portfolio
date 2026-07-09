@@ -929,6 +929,10 @@ body {
               <span>Swiggy Market Analytics</span>
               <span class="search-item-meta">Project</span>
             </div>
+            <div class="search-item" onclick="navigateToItem('projects', 'commits-card-projects')">
+              <span>Academic Research Papers (News Curation, Career Recommendation)</span>
+              <span class="search-item-meta">Project</span>
+            </div>
           </div>
           <!-- Skills -->
           <div class="search-group-header">Technical Skills</div>
@@ -1013,18 +1017,26 @@ body {
               <a href="#projects" class="brutal-btn">See Projects</a>
             </div>
           </div>
-          <!-- Commits stats widget -->
-          <div class="commits-card brutal-box interactive" style="grid-column: auto;">
+          
+          <!-- Research Spotlight widget -->
+          <div class="commits-card brutal-box interactive" style="grid-column: auto; background-color: var(--pink);">
             <div class="commits-header">
-              <span class="commits-title">Coding Activity</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <span class="commits-title" style="font-size: 20px;">Research Spotlight</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3A2.5 2.5 0 0 1 6.5 0.5H20v16.5H6.5a2.5 2.5 0 0 0-2.5 2.5z"/></svg>
             </div>
-            <svg class="sparkline-svg" viewBox="0 0 200 60">
-              <path d="M 0 45 Q 20 20 40 35 T 80 15 T 120 48 T 160 10 L 200 25" />
-            </svg>
-            <div class="commits-meta">
-              <span class="commits-val">1,000+</span>
-              <span class="commits-lbl">GitHub Commits</span>
+            <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 10px;">
+              <div style="font-size: 13.5px; font-weight: 700; line-height: 1.3;">
+                1. Personalized News Curation using AI
+                <span style="font-family: 'DM Mono', monospace; font-size: 11px; display: block; font-weight: 500; color: var(--text-dark); margin-top: 2px;">(NLP, TF-IDF Vector Space Models)</span>
+              </div>
+              <div style="font-size: 13.5px; font-weight: 700; line-height: 1.3;">
+                2. ML-Based Student Career Recommender
+                <span style="font-family: 'DM Mono', monospace; font-size: 11px; display: block; font-weight: 500; color: var(--text-dark); margin-top: 2px;">(Ensemble ML: 88% Accuracy)</span>
+              </div>
+            </div>
+            <div class="commits-meta" style="margin-top: 20px;">
+              <span class="commits-val" style="font-size: 26px;">2 Published</span>
+              <span class="commits-lbl">Research Papers</span>
             </div>
           </div>
         </div>
@@ -1224,18 +1236,38 @@ body {
             </div>
           </div>
 
-          <!-- Commits stats widget (Pink) -->
-          <div class="commits-card brutal-box interactive" id="commits-card-projects">
-            <div class="commits-header">
-              <span class="commits-title">Coding Activity</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <!-- Research publications widget (Pink) -->
+          <div class="commits-card brutal-box interactive" id="commits-card-projects" style="grid-column: span 2; background-color: var(--pink);">
+            <div class="commits-header" style="border-bottom: 2px solid var(--black); padding-bottom: 12px; margin-bottom: 16px;">
+              <span class="commits-title">Academic Research Publications</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3A2.5 2.5 0 0 1 6.5 0.5H20v16.5H6.5a2.5 2.5 0 0 0-2.5 2.5z"/></svg>
             </div>
-            <svg class="sparkline-svg" viewBox="0 0 200 60">
-              <path d="M 0 45 Q 20 20 40 35 T 80 15 T 120 48 T 160 10 L 200 25" />
-            </svg>
-            <div class="commits-meta">
-              <span class="commits-val">1,000+</span>
-              <span class="commits-lbl">GitHub Commits</span>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; text-align: left;">
+              <!-- Paper 1 -->
+              <div>
+                <h4 style="font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; margin-bottom: 8px;">1. Personalized News Curation Using AI</h4>
+                <p style="font-size: 13px; line-height: 1.5; color: var(--text-dark); margin-bottom: 12px;">
+                  Designed and evaluated a content-based recommender system utilizing Natural Language Processing (NLP) and TF-IDF semantic vector space models. Achieved a Mean Average Precision (MAP) score of 0.72 and normalized discounted cumulative gain (nDCG) of 0.68. Improved cold-start recommendation cases by 17% over collaborative filtering baselines.
+                </p>
+                <div class="project-card-footer" style="margin-top: auto;">
+                  <span class="project-tag" style="background-color: var(--white);">NLP</span>
+                  <span class="project-tag" style="background-color: var(--white);">TF-IDF</span>
+                  <span class="project-tag" style="background-color: var(--white);">Cosine Similarity</span>
+                </div>
+              </div>
+              <!-- Paper 2 -->
+              <div>
+                <h4 style="font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; margin-bottom: 8px;">2. Recommend Career Paths Based on Student Profile</h4>
+                <p style="font-size: 13px; line-height: 1.5; color: var(--text-dark); margin-bottom: 12px;">
+                  Developed a hybrid career recommendation architecture fusing student aptitudes, interest surveys, and self-rated skills. Built an ensemble machine learning model (Decision Trees, Random Forest, SVM, MLP) reaching 88% overall accuracy and 92% top-3 accuracy. Utilized SHAP-based feature importance explainability.
+                </p>
+                <div class="project-card-footer" style="margin-top: auto;">
+                  <span class="project-tag" style="background-color: var(--white);">Ensemble ML</span>
+                  <span class="project-tag" style="background-color: var(--white);">SHAP Explainability</span>
+                  <span class="project-tag" style="background-color: var(--white);">Hybrid Recommender</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1250,27 +1282,52 @@ body {
         <div class="education-view-layout">
           
           <div class="edu-list">
-            <div class="edu-card brutal-box interactive" id="edu-card-1">
-              <div class="edu-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+            
+            <div class="edu-card brutal-box interactive" id="edu-card-1" style="flex-direction: column; align-items: stretch; gap: 12px;">
+              <div style="display: flex; align-items: flex-start; gap: 20px;">
+                <div class="edu-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                </div>
+                <div class="edu-details">
+                  <h3 class="edu-degree">B.E. in Computer Science (AI &amp; ML)</h3>
+                  <span class="edu-school">Chandigarh University (CU), India</span>
+                  <span class="edu-period">Jul 2023 — Jun 2026 (Current) | CGPA: 6.9</span>
+                </div>
               </div>
-              <div class="edu-details">
-                <h3 class="edu-degree">B.E. in Computer Science (AI &amp; ML)</h3>
-                <span class="edu-school">Chandigarh University (CU), India</span>
-                <span class="edu-period">Jul 2023 — Jun 2026 (Current) | CGPA: 6.9</span>
+              <div style="border-top: 1.5px dashed var(--black); padding-top: 12px; margin-top: 4px;">
+                <strong style="display: block; font-size: 12px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Academic Research Papers:</strong>
+                <ul style="font-size: 13px; line-height: 1.5; color: var(--text-dark); padding-left: 20px; list-style-type: square; display: flex; flex-direction: column; gap: 8px;">
+                  <li>
+                    <strong>Personalized News Curation using AI:</strong> Designed a content-based recommendation model using TF-IDF and NLP. Achieved a Mean Average Precision (MAP) score of 0.72 and normalized discounted cumulative gain (nDCG) of 0.68. Improved cold-start cases by 17%.
+                  </li>
+                  <li>
+                    <strong>Recommend Career Paths based on Student Profile:</strong> Developed a hybrid machine learning recommendation system combining aptitude scores, interest surveys, and skills. Built an ensemble model (Random Forest, SVM, MLP) reaching 88% overall accuracy and 92% top-3 accuracy.
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div class="edu-card brutal-box interactive" id="edu-card-2">
-              <div class="edu-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+            <div class="edu-card brutal-box interactive" id="edu-card-2" style="flex-direction: column; align-items: stretch; gap: 12px;">
+              <div style="display: flex; align-items: flex-start; gap: 20px;">
+                <div class="edu-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                </div>
+                <div class="edu-details">
+                  <h3 class="edu-degree">Diploma in Computer Science Engineering</h3>
+                  <span class="edu-school">Seth Jai Parkash Polytechnic, Damla</span>
+                  <span class="edu-period">Completed | Score: 75%</span>
+                </div>
               </div>
-              <div class="edu-details">
-                <h3 class="edu-degree">Diploma in Computer Science Engineering</h3>
-                <span class="edu-school">Seth Jai Parkash Polytechnic, Damla</span>
-                <span class="edu-period">Completed | Score: 75%</span>
+              <div style="border-top: 1.5px dashed var(--black); padding-top: 12px; margin-top: 4px;">
+                <strong style="display: block; font-size: 12px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Industrial Training:</strong>
+                <ul style="font-size: 13px; line-height: 1.5; color: var(--text-dark); padding-left: 20px; list-style-type: square; display: flex; flex-direction: column; gap: 6px;">
+                  <li>
+                    <strong>Python Industrial Programming:</strong> Completed 2-Month Industrial Training at the <em>Indian Institute of Computer Education (IICE), Yamuna Nagar</em> (Attended from 26-Jul-2021 to 26-Sep-2021). Obtained a verified <strong>Grade 'A'</strong> (80% to 89% scoring bracket).
+                  </li>
+                </ul>
               </div>
             </div>
+            
           </div>
 
           <!-- Right Column: Certifications list -->
